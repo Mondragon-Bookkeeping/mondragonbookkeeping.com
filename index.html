@@ -1465,8 +1465,16 @@
   }
   .form-success.visible { display: block; }
   .form-success-icon {
-    font-size: 40px;
-    margin-bottom: 16px;
+    width: 52px;
+    height: 52px;
+    background: rgba(23,117,253,0.1);
+    border: 1px solid rgba(23,117,253,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    color: #1775FD;
   }
   .form-success h3 {
     font-family: var(--serif);
@@ -1940,7 +1948,12 @@
       <p class="form-note">No spam, ever. Unsubscribe anytime. You'll also receive occasional tax tips from Mondragon Tax & Advisory.</p>
     </div>
     <div class="form-success" id="form-success">
-      <div class="form-success-icon">✉️</div>
+      <div class="form-success-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
       <h3>Check your inbox!</h3>
       <p>The Tax Advisory Readiness Guide is on its way. While you're here — set up your free client portal in 60 seconds and reach me directly.</p>
       <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-gold" style="display:inline-block;margin-top:20px;padding:14px 28px;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;" target="_blank">Set Up Free Portal →</a>
