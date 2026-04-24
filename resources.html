@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Resources — Mondragon Tax & Advisory</title>
+<meta name="description" content="Free tax guides and frameworks for business owners, investors, and rental property owners. From Mondragon Tax & Advisory — Brandon Mondragon, San Diego, CA.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.mondragonbookkeeping.com/resources.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:         #F7F3EC;
+    --cream-dark:    #EDE8DF;
+    --charcoal:      #16181F;
+    --charcoal-mid:  #252830;
+    --charcoal-light:#363A45;
+    --gold:          #1775FD;
+    --gold-light:    #4A93FD;
+    --text:          #1A1C24;
+    --text-mid:      #4A4D5A;
+    --text-light:    #7A7D8A;
+    --serif:         'Cormorant Garamond', Georgia, serif;
+    --sans:          'DM Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    background: rgba(22,24,31,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(23,117,253,0.15);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+  }
+  .nav-logo-icon { display: flex; align-items: flex-end; gap: 3px; height: 28px; }
+  .nav-logo-icon span { display: block; border-radius: 3px 3px 0 0; width: 6px; }
+  .nav-logo-icon span:nth-child(1) { height: 14px; background: rgba(23,117,253,0.35); }
+  .nav-logo-icon span:nth-child(2) { height: 20px; background: rgba(23,117,253,0.65); }
+  .nav-logo-icon span:nth-child(3) { height: 28px; background: #1775FD; }
+  .nav-logo-text {
+    font-family: var(--serif); font-size: 18px; font-weight: 500;
+    color: #F7F3EC; letter-spacing: 0.02em; line-height: 1.1;
+  }
+  .nav-logo-text small {
+    display: block; font-family: var(--sans); font-size: 9px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(247,243,236,0.45); font-weight: 400; margin-top: 1px;
+  }
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-family: var(--sans); font-size: 13px; font-weight: 400;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(247,243,236,0.6); text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #F7F3EC; }
+  .nav-ctas { display: flex; align-items: center; gap: 12px; }
+  .btn-ghost {
+    font-family: var(--sans); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(247,243,236,0.7); text-decoration: none;
+    padding: 8px 16px; border: 1px solid rgba(247,243,236,0.2);
+    border-radius: 3px; transition: all 0.2s;
+  }
+  .btn-ghost:hover { color: #F7F3EC; border-color: rgba(247,243,236,0.5); }
+  .btn-gold {
+    font-family: var(--sans); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #16181F; text-decoration: none; padding: 8px 20px;
+    background: var(--gold); border-radius: 3px; transition: all 0.2s;
+  }
+  .btn-gold:hover { background: var(--gold-light); color: #fff; }
+
+  /* ── PAGE HEADER ── */
+  #page-header {
+    background: var(--charcoal);
+    padding: 140px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header-grain {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4; pointer-events: none;
+  }
+  .header-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+  .header-label {
+    font-family: var(--sans); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 24px;
+  }
+  .header-title {
+    font-family: var(--serif); font-size: clamp(44px, 6vw, 72px);
+    font-weight: 300; line-height: 1.05; color: var(--cream);
+    margin-bottom: 20px;
+  }
+  .header-title em { font-style: italic; color: var(--gold-light); }
+  .header-sub {
+    font-family: var(--sans); font-size: 16px; font-weight: 300;
+    line-height: 1.8; color: rgba(247,243,236,0.5);
+    max-width: 560px;
+  }
+  .header-divider {
+    width: 48px; height: 1px; background: rgba(23,117,253,0.4);
+    margin: 28px 0;
+  }
+
+  /* ── RESOURCES SECTION ── */
+  #resources {
+    padding: 80px 48px 100px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .resources-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 0;
+  }
+
+  /* ── RESOURCE CARD ── */
+  .resource-card {
+    border: 1px solid var(--cream-dark);
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .resource-card-cover {
+    background: var(--charcoal);
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .resource-card-cover-grain {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.5; pointer-events: none;
+  }
+  .resource-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    border-radius: 3px; padding: 6px 12px; width: fit-content;
+    font-family: var(--sans); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    position: relative; z-index: 1;
+  }
+  .resource-badge.blue {
+    background: rgba(23,117,253,0.15);
+    border: 1px solid rgba(23,117,253,0.3);
+    color: var(--gold-light);
+  }
+  .resource-badge.red {
+    background: rgba(232,69,69,0.15);
+    border: 1px solid rgba(232,69,69,0.3);
+    color: #E84545;
+  }
+  .resource-card-title {
+    font-family: var(--serif); font-size: 30px; font-weight: 300;
+    line-height: 1.1; color: var(--cream); position: relative; z-index: 1;
+  }
+  .resource-card-title em { font-style: italic; color: var(--gold-light); }
+  .resource-card-title .red { font-style: italic; color: #E84545; }
+  .resource-page-count {
+    font-family: var(--sans); font-size: 10px; font-weight: 400;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(247,243,236,0.25); position: relative; z-index: 1;
+  }
+
+  /* Card body */
+  .resource-card-body {
+    background: var(--cream);
+    padding: 32px 36px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .resource-desc {
+    font-size: 14px; font-weight: 300; line-height: 1.8;
+    color: var(--text-mid); margin-bottom: 24px;
+  }
+  .resource-includes-title {
+    font-family: var(--sans); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 14px;
+  }
+  .resource-list { list-style: none; margin-bottom: 28px; }
+  .resource-list li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 13px; font-weight: 300; color: var(--text-mid);
+    padding: 5px 0; line-height: 1.6;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .resource-list li:last-child { border-bottom: none; }
+  .resource-check {
+    width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px;
+    border: 1.5px solid rgba(23,117,253,0.2);
+    background: rgba(23,117,253,0.06);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .resource-check svg { width: 9px; height: 9px; }
+
+  /* Form inside card */
+  .resource-form-wrap { margin-top: auto; }
+  .resource-form-divider {
+    border: none; border-top: 1px solid var(--cream-dark); margin-bottom: 24px;
+  }
+  .resource-form-title {
+    font-family: var(--serif); font-size: 22px; font-weight: 400;
+    color: var(--text); margin-bottom: 6px;
+  }
+  .resource-form-sub {
+    font-size: 12px; font-weight: 300; color: var(--text-light);
+    margin-bottom: 18px; line-height: 1.6;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .form-group { margin-bottom: 10px; }
+  .form-group label {
+    display: block; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-light); margin-bottom: 6px;
+  }
+  .form-group input {
+    width: 100%; font-family: var(--sans); font-size: 13px; font-weight: 300;
+    color: var(--text); background: var(--cream);
+    border: 1px solid var(--cream-dark); border-radius: 3px;
+    padding: 10px 12px; outline: none; transition: border-color 0.2s;
+  }
+  .form-group input:focus { border-color: var(--gold); }
+  .form-group input::placeholder { color: rgba(74,77,90,0.4); }
+  .form-submit {
+    width: 100%; font-family: var(--sans); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #fff; background: var(--gold);
+    border: none; border-radius: 3px; padding: 13px 20px;
+    cursor: pointer; transition: background 0.2s; margin-top: 4px;
+  }
+  .form-submit:hover { background: var(--gold-light); }
+  .form-note {
+    font-size: 11px; font-weight: 300; color: var(--text-light);
+    margin-top: 10px; line-height: 1.6; text-align: center;
+  }
+  .form-success {
+    display: none; text-align: center; padding: 24px 0;
+  }
+  .form-success.visible { display: block; }
+  .form-success-icon {
+    font-family: var(--serif); font-size: 36px; color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .form-success h3 {
+    font-family: var(--serif); font-size: 24px; font-weight: 400;
+    color: var(--text); margin-bottom: 8px;
+  }
+  .form-success p {
+    font-size: 13px; font-weight: 300; color: var(--text-mid); line-height: 1.7;
+  }
+  .form-success a {
+    display: inline-block; margin-top: 16px;
+    font-family: var(--sans); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #fff; background: var(--gold);
+    padding: 11px 24px; border-radius: 3px; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .form-success a:hover { background: var(--gold-light); }
+
+  /* ── SIDEBAR NOTE ── */
+  .resources-note {
+    margin-top: 48px;
+    padding: 24px 28px;
+    border-left: 2px solid var(--gold);
+    background: rgba(23,117,253,0.04);
+  }
+  .resources-note p {
+    font-family: var(--serif); font-size: 18px; font-style: italic;
+    font-weight: 300; color: var(--text-mid); line-height: 1.75;
+  }
+  .resources-note span {
+    display: block; margin-top: 12px;
+    font-family: var(--sans); font-size: 12px; font-weight: 400;
+    color: var(--text-light); font-style: normal; letter-spacing: 0.04em;
+  }
+
+  /* ── CTA SECTION ── */
+  #cta {
+    background: var(--charcoal);
+    padding: 80px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-inner { max-width: 600px; margin: 0 auto; position: relative; z-index: 1; }
+  .cta-eyebrow {
+    font-family: var(--sans); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px;
+  }
+  .cta-headline {
+    font-family: var(--serif); font-size: clamp(36px, 5vw, 56px);
+    font-weight: 300; line-height: 1.1; color: var(--cream);
+    margin-bottom: 16px;
+  }
+  .cta-headline em { font-style: italic; color: var(--gold-light); }
+  .cta-sub {
+    font-size: 15px; font-weight: 300; line-height: 1.8;
+    color: rgba(247,243,236,0.45); margin-bottom: 36px;
+  }
+  .cta-actions { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--sans); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--charcoal); background: var(--cream);
+    text-decoration: none; padding: 14px 28px; border-radius: 3px;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: #fff; }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--sans); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(247,243,236,0.5); background: transparent;
+    text-decoration: none; padding: 14px 28px; border-radius: 3px;
+    border: 1px solid rgba(247,243,236,0.15); transition: all 0.2s;
+  }
+  .btn-outline:hover { color: var(--cream); border-color: rgba(247,243,236,0.4); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    border-top: 1px solid rgba(247,243,236,0.05);
+    padding: 56px 48px 28px;
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px; margin-bottom: 48px;
+  }
+  .footer-brand p {
+    font-size: 13px; font-weight: 300; line-height: 1.8;
+    color: rgba(247,243,236,0.3); margin-top: 16px; max-width: 220px;
+  }
+  .footer-col h4 {
+    font-family: var(--sans); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(247,243,236,0.25); margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 8px; }
+  .footer-col a {
+    font-family: var(--sans); font-size: 13px; font-weight: 300;
+    color: rgba(247,243,236,0.4); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--cream); }
+  .footer-contact-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 300; color: rgba(247,243,236,0.4);
+    margin-bottom: 10px;
+  }
+  .footer-instagram {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 300; color: rgba(247,243,236,0.4);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-instagram:hover { color: var(--gold-light); }
+  .footer-bottom {
+    border-top: 1px solid rgba(247,243,236,0.06);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 24px; flex-wrap: wrap;
+  }
+  .footer-bottom p {
+    font-size: 12px; font-weight: 300; color: rgba(247,243,236,0.2);
+    line-height: 1.7;
+  }
+  .footer-legal { display: flex; gap: 20px; flex-shrink: 0; }
+  .footer-legal a {
+    font-size: 11px; font-weight: 400; letter-spacing: 0.08em;
+    color: rgba(247,243,236,0.2); text-decoration: none; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-legal a:hover { color: rgba(247,243,236,0.5); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    nav .nav-links { display: none; }
+    #page-header { padding: 120px 24px 60px; }
+    #resources { padding: 60px 24px 80px; }
+    .resources-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 48px 24px 24px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    #cta { padding: 60px 24px; }
+  }
+  @media (max-width: 600px) {
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-logo-text">
+      Mondragon
+      <small>Tax &amp; Advisory</small>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="index.html#checklist">Free Guide</a></li>
+    <li><a href="resources.html" style="color:#F7F3EC;">Resources</a></li>
+  </ul>
+  <div class="nav-ctas">
+    <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-ghost" target="_blank">Client Portal</a>
+    <a href="index.html#checklist" class="btn-gold">Free Guide</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section id="page-header">
+  <div class="header-grain"></div>
+  <div class="header-inner">
+    <div class="header-label">Free Resources</div>
+    <h1 class="header-title">Guides to help you<br><em>understand your taxes</em></h1>
+    <div class="header-divider"></div>
+    <p class="header-sub">No sign-up walls, no webinars, no fluff. Just clear frameworks and actionable guides — free. Download any guide below and keep it.</p>
+  </div>
+</section>
+
+<!-- RESOURCES GRID -->
+<section id="resources">
+  <div class="resources-grid">
+
+    <!-- GUIDE 1: READINESS GUIDE -->
+    <div class="resource-card">
+      <div class="resource-card-cover">
+        <div class="resource-card-cover-grain"></div>
+        <div class="resource-badge blue">Advisory Framework</div>
+        <h2 class="resource-card-title">Tax Advisory<br><em>Readiness Guide</em></h2>
+        <div class="resource-page-count">8 pages &nbsp;·&nbsp; PDF delivered by email</div>
+      </div>
+      <div class="resource-card-body">
+        <p class="resource-desc">Everything you should understand before sitting down with a tax advisor — and why that changes everything. Built for business owners, investors, and rental property owners who are done reacting and ready to plan.</p>
+        <div class="resource-includes-title">What's inside</div>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            5 questions every business owner should answer about their taxes
+          </li>
+          <li>
+            <span class="resource-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            The real difference between a tax preparer and a tax advisor
+          </li>
+          <li>
+            <span class="resource-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            A year-round planning calendar — what proactive planning actually looks like
+          </li>
+          <li>
+            <span class="resource-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Missed opportunities by situation: business owner, rental, investor
+          </li>
+          <li>
+            <span class="resource-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            How to prepare for your first advisory conversation
+          </li>
+        </ul>
+
+        <div class="resource-form-wrap">
+          <hr class="resource-form-divider">
+          <div id="guide1-inner">
+            <h3 class="resource-form-title">Get the free guide</h3>
+            <p class="resource-form-sub">I'll send it to your inbox instantly. 8 pages. No BS — just the framework.</p>
+            <form action="https://formspree.io/f/mnjlooby" method="POST" onsubmit="handleSubmit(event,'guide1')">
+              <input type="hidden" name="_subject" value="Tax Advisory Readiness Guide Request — resources page">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" name="name" placeholder="Your first name" required>
+                </div>
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" name="email" placeholder="you@example.com" required>
+                </div>
+              </div>
+              <button type="submit" class="form-submit">Send Me the Guide →</button>
+            </form>
+            <p class="form-note">No spam, ever. Unsubscribe anytime.</p>
+          </div>
+          <div class="form-success" id="guide1-success">
+            <div class="form-success-icon">✓</div>
+            <h3>Check your inbox</h3>
+            <p>The Tax Advisory Readiness Guide is on its way. While you're here — set up your free client portal in 60 seconds.</p>
+            <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" target="_blank">Set Up Free Portal →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUIDE 2: MISSED DEADLINE -->
+    <div class="resource-card">
+      <div class="resource-card-cover" style="background:#1A0A0A;">
+        <div class="resource-card-cover-grain"></div>
+        <div class="resource-badge red">Post-Tax Season</div>
+        <h2 class="resource-card-title">Missed the<br><span class="red">April 15th</span><br>Deadline?</h2>
+        <div class="resource-page-count">6 pages &nbsp;·&nbsp; PDF delivered by email</div>
+      </div>
+      <div class="resource-card-body">
+        <p class="resource-desc">You missed the deadline. Here's exactly what happens next, what the IRS can and cannot do, and the specific steps to take right now to minimize damage and get back on track.</p>
+        <div class="resource-includes-title">What's inside</div>
+        <ul class="resource-list">
+          <li>
+            <span class="resource-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Failure-to-file vs. failure-to-pay penalties — explained plainly
+          </li>
+          <li>
+            <span class="resource-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            Your immediate action checklist — what to do first
+          </li>
+          <li>
+            <span class="resource-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            IRS payment plans and options — what you actually qualify for
+          </li>
+          <li>
+            <span class="resource-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            First-time penalty abatement — and how to request it
+          </li>
+          <li>
+            <span class="resource-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            State-specific considerations for California filers (FTB)
+          </li>
+        </ul>
+
+        <div class="resource-form-wrap">
+          <hr class="resource-form-divider">
+          <div id="guide2-inner">
+            <h3 class="resource-form-title">Get the free guide</h3>
+            <p class="resource-form-sub">I'll send it to your inbox instantly. 6 pages. Clear, direct, no filler.</p>
+            <form action="https://formspree.io/f/mnjlooby" method="POST" onsubmit="handleSubmit(event,'guide2')">
+              <input type="hidden" name="_subject" value="Missed Deadline Guide Request — resources page">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" name="name" placeholder="Your first name" required>
+                </div>
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" name="email" placeholder="you@example.com" required>
+                </div>
+              </div>
+              <button type="submit" class="form-submit" style="background:#c0392b;">Send Me the Guide →</button>
+            </form>
+            <p class="form-note">No spam, ever. Unsubscribe anytime.</p>
+          </div>
+          <div class="form-success" id="guide2-success">
+            <div class="form-success-icon">✓</div>
+            <h3>Check your inbox</h3>
+            <p>The Missed Deadline Guide is on its way. Want to talk through your specific situation?</p>
+            <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" target="_blank">Book a Free Consultation →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /resources-grid -->
+
+  <!-- Pull quote note -->
+  <div class="resources-note">
+    <p>"These guides exist because most people only learn the hard way. I'd rather you have the framework before the problem hits."</p>
+    <span>— Brandon Mondragon, Founder &amp; Principal · Mondragon Tax &amp; Advisory</span>
+  </div>
+
+</section>
+
+<!-- CTA SECTION -->
+<section id="cta">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Want Personalized Advice?</div>
+    <h2 class="cta-headline">A guide is a start.<br><em>A strategy is better.</em></h2>
+    <p class="cta-sub">Book a free, no-pressure consultation. We'll talk through your situation and I'll tell you honestly what I'd do in your position — no commitment required.</p>
+    <div class="cta-actions">
+      <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-primary" target="_blank">
+        Book a Free Consultation
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 4l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-outline" target="_blank">Access Client Portal</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="text-decoration:none">
+        <div class="nav-logo-icon">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="nav-logo-text">
+          Mondragon
+          <small>Tax &amp; Advisory</small>
+        </div>
+      </a>
+      <p>Proactive accounting &amp; tax services for individuals and small businesses. Based in San Diego — working with clients nationwide.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="index.html#pricing">Monthly Bookkeeping</a></li>
+        <li><a href="index.html#pricing">Payroll Management</a></li>
+        <li><a href="index.html#pricing">Tax Preparation</a></li>
+        <li><a href="index.html#pricing">Tax Planning</a></li>
+        <li><a href="index.html#pricing">Entity Setup</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="https://portal.mondragonbookkeeping.com/login?step=signIn" target="_blank">Client Portal</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="resources.html">Free Resources</a></li>
+        <li><a href="index.html#about">About Brandon</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item">✉ brandon@mondragonbookkeeping.com</div>
+      <div class="footer-contact-item">⊙ San Diego, CA (remote-friendly)</div>
+      <div class="footer-contact-item">
+        <a href="https://www.instagram.com/mondragon.taxadvisory/" target="_blank" class="footer-instagram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+          @mondragon.taxadvisory
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Mondragon Tax &amp; Advisory. All rights reserved.<br>
+    <span style="color:rgba(247,243,236,0.12)">This website is for marketing and informational purposes only and does not constitute specific legal, tax, or financial advice for your individual situation.</span></p>
+    <div class="footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(event, formId) {
+  event.preventDefault();
+  const form = event.target;
+  const btn = form.querySelector('.form-submit');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(res => {
+    if (res.ok) {
+      document.getElementById(formId + '-inner').style.display = 'none';
+      document.getElementById(formId + '-success').classList.add('visible');
+    } else {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Something went wrong — try again';
+    btn.disabled = false;
+  });
+}
+</script>
+
+</body>
+</html>
