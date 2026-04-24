@@ -1919,16 +1919,17 @@
   <div class="checklist-form-wrap" id="checklist-form-area">
     <div id="checklist-form-inner">
       <h3 class="checklist-form-title">Get the free guide</h3>
-      <p class="checklist-form-sub">I'll send it to your inbox instantly. 8 pages. No BS — just the framework.</p>
-      <form id="checklist-form" action="https://formspree.io/f/mnjlooby" method="POST" onsubmit="handleChecklistSubmit(event)">
-        <input type="hidden" name="_subject" value="Tax Advisory Readiness Guide Request">
+      <p class="checklist-form-sub">I'll send it to your inbox instantly. No BS — just the framework.</p>
+      <form id="checklist-form" onsubmit="handleChecklistSubmit(event)">
+        <!-- Mailchimp honeypot — do not remove -->
+        <input type="text" name="b_9bc30daf9c59f625e466a2c68_3268001efd" tabindex="-1" value="" style="position:absolute;left:-5000px;aria-hidden:true">
         <div class="form-group">
           <label>First Name</label>
-          <input type="text" name="name" placeholder="Your first name" required>
+          <input type="text" name="FNAME" placeholder="Your first name" required>
         </div>
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" name="email" placeholder="you@example.com" required>
+          <input type="email" name="EMAIL" placeholder="you@example.com" required>
         </div>
         <button type="submit" class="form-submit">Send Me the Guide →</button>
       </form>
@@ -2077,25 +2078,39 @@ function handleChecklistSubmit(event) {
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
-  const data = new FormData(form);
-  fetch('https://formspree.io/f/mnjlooby', {
-    method: 'POST',
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(res => {
-    if (res.ok) {
+  const email = form.querySelector('[name="EMAIL"]').value;
+  const fname = form.querySelector('[name="FNAME"]').value;
+  const honeypot = form.querySelector('[name="b_9bc30daf9c59f625e466a2c68_3268001efd"]').value;
+
+  const callbackName = 'mc_callback_' + Date.now();
+  const params = new URLSearchParams({
+    u: '9bc30daf9c59f625e466a2c68',
+    id: '3268001efd',
+    f_id: '004aa3e1f0',
+    EMAIL: email,
+    FNAME: fname,
+    ['b_9bc30daf9c59f625e466a2c68_3268001efd']: honeypot,
+    c: callbackName
+  });
+
+  window[callbackName] = function(data) {
+    delete window[callbackName];
+    if (data.result === 'success') {
       document.getElementById('checklist-form-inner').style.display = 'none';
       document.getElementById('form-success').classList.add('visible');
     } else {
       btn.textContent = 'Something went wrong — try again';
       btn.disabled = false;
     }
-  })
-  .catch(() => {
+  };
+
+  const script = document.createElement('script');
+  script.src = 'https://mondragonbookkeeping.us14.list-manage.com/subscribe/post-json?' + params.toString();
+  script.onerror = function() {
     btn.textContent = 'Something went wrong — try again';
     btn.disabled = false;
-  });
+  };
+  document.body.appendChild(script);
 }
 
 // ── NAV SCROLL ──

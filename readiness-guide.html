@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax Advisory Readiness Guide — Free Download | Mondragon Tax & Advisory</title>
+<meta name="description" content="Free 8-page guide: what every business owner, investor, and rental property owner should understand before sitting down with a tax advisor.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F7F3EC;
+    --cream-dark: #EDE8DF;
+    --charcoal: #16181F;
+    --charcoal-mid: #252830;
+    --blue: #1775FD;
+    --blue-light: #4A93FD;
+    --blue-tint: rgba(23,117,253,0.08);
+    --blue-border: rgba(23,117,253,0.2);
+    --text: #1A1C24;
+    --text-mid: #4A4D5A;
+    --text-light: #7A7D8A;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html, body {
+    height: 100%;
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── LAYOUT ── */
+  .page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  /* ── HEADER BAR ── */
+  .site-header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    padding: 20px 48px;
+    border-bottom: 1px solid var(--cream-dark);
+    background: var(--cream);
+  }
+
+  .logo {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+  }
+
+  .logo-bar {
+    border-radius: 3px 3px 0 0;
+    width: 5px;
+  }
+
+  .logo-bar-1 { height: 14px; background: rgba(23,117,253,0.35); }
+  .logo-bar-2 { height: 20px; background: rgba(23,117,253,0.65); }
+  .logo-bar-3 { height: 28px; background: #1775FD; }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .logo-name {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .logo-sub {
+    font-family: var(--sans);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    line-height: 1;
+  }
+
+  /* ── LEFT COLUMN — COPY ── */
+  .content-col {
+    padding: 64px 56px 64px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--cream-dark);
+  }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 18px;
+  }
+
+  .headline {
+    font-family: var(--serif);
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  .headline em {
+    font-style: italic;
+    color: var(--blue);
+  }
+
+  .subhead {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--text-mid);
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    border-left: 2px solid var(--blue);
+    padding-left: 20px;
+    margin-bottom: 36px;
+  }
+
+  .pull-quote-text {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .pull-quote-attr {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-top: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  /* What's inside list */
+  .inside-label {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 14px;
+  }
+
+  .inside-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .inside-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  .inside-check {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border: 1.5px solid var(--blue-border);
+    background: var(--blue-tint);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--blue);
+    font-weight: 600;
+    margin-top: 1px;
+  }
+
+  /* ── RIGHT COLUMN — FORM ── */
+  .form-col {
+    background: var(--charcoal);
+    padding: 64px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form-eyebrow {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(23,117,253,0.7);
+    margin-bottom: 14px;
+  }
+
+  .form-title {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .form-title em {
+    font-style: italic;
+    color: var(--blue-light);
+  }
+
+  .form-sub {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(247,243,236,0.5);
+    line-height: 1.65;
+    margin-bottom: 32px;
+  }
+
+  .divider {
+    width: 32px;
+    height: 1px;
+    background: rgba(23,117,253,0.3);
+    margin-bottom: 32px;
+  }
+
+  .field-group {
+    margin-bottom: 18px;
+  }
+
+  .field-group label {
+    display: block;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(247,243,236,0.4);
+    margin-bottom: 8px;
+  }
+
+  .field-group input {
+    width: 100%;
+    background: rgba(247,243,236,0.06);
+    border: 1px solid rgba(247,243,236,0.12);
+    border-radius: 3px;
+    padding: 13px 16px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .field-group input::placeholder { color: rgba(247,243,236,0.2); }
+  .field-group input:focus { border-color: rgba(23,117,253,0.5); }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--blue);
+    border: none;
+    border-radius: 3px;
+    padding: 15px 24px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .submit-btn:hover { background: var(--blue-light); transform: translateY(-1px); }
+  .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  .form-note {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(247,243,236,0.2);
+    line-height: 1.6;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  /* ── SUCCESS STATE ── */
+  .success-state {
+    display: none;
+    text-align: center;
+  }
+
+  .success-state.visible { display: block; }
+
+  .success-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--blue-tint);
+    border: 1px solid var(--blue-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+  }
+
+  .success-icon svg { color: var(--blue); }
+
+  .success-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .success-title em { font-style: italic; color: var(--blue-light); }
+
+  .success-text {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(247,243,236,0.5);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .success-link {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid rgba(23,117,253,0.4);
+    border-radius: 3px;
+    padding: 12px 24px;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .success-link:hover { border-color: var(--blue); color: var(--cream); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    grid-column: 1 / -1;
+    padding: 20px 64px;
+    border-top: 1px solid var(--cream-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-text {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--text-light);
+  }
+
+  .footer-link {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--blue);
+    text-decoration: none;
+  }
+
+  .footer-link:hover { text-decoration: underline; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    .page {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto auto;
+    }
+
+    .site-header { padding: 18px 24px; }
+    .content-col { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--cream-dark); }
+    .headline { font-size: 38px; }
+    .form-col { padding: 48px 24px; }
+    .site-footer { padding: 18px 24px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="https://www.mondragonbookkeeping.com" class="logo">
+      <div class="logo-bars">
+        <div class="logo-bar logo-bar-1"></div>
+        <div class="logo-bar logo-bar-2"></div>
+        <div class="logo-bar logo-bar-3"></div>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Mondragon</span>
+        <span class="logo-sub">Tax &amp; Advisory</span>
+      </div>
+    </a>
+  </header>
+
+  <!-- LEFT: COPY -->
+  <main class="content-col">
+    <p class="eyebrow">Free 10-Page Guide</p>
+    <h1 class="headline">Know what to ask<br>before you sit down<br>with a <em>tax advisor.</em></h1>
+    <p class="subhead">Most people walk into their first advisory meeting unprepared — and leave with a bill, not a plan. This guide changes that. Eight pages. No fluff. Everything you need to walk in ready.</p>
+
+    <div class="pull-quote">
+      <p class="pull-quote-text">"The difference between a tax preparer and a tax advisor isn't credentials — it's what happens the other eleven months of the year."</p>
+      <p class="pull-quote-attr">— Brandon Mondragon, Mondragon Tax &amp; Advisory</p>
+    </div>
+
+    <p class="inside-label">What's inside</p>
+    <ul class="inside-list">
+      <li class="inside-item">
+        <span class="inside-check">✓</span>
+        5 questions every business owner, investor, and property owner should be able to answer about their taxes
+      </li>
+      <li class="inside-item">
+        <span class="inside-check">✓</span>
+        The real difference between a tax preparer and a tax advisor — and why it matters
+      </li>
+      <li class="inside-item">
+        <span class="inside-check">✓</span>
+        A year-round planning calendar — what proactive tax planning actually looks like
+      </li>
+      <li class="inside-item">
+        <span class="inside-check">✓</span>
+        Missed opportunities by situation: business owner, rental property, investor
+      </li>
+      <li class="inside-item">
+        <span class="inside-check">✓</span>
+        How to prepare for your first advisory conversation so you get a plan, not a bill
+      </li>
+    </ul>
+  </main>
+
+  <!-- RIGHT: FORM -->
+  <aside class="form-col">
+
+    <!-- Form state -->
+    <div id="form-wrap">
+      <p class="form-eyebrow">Get it free</p>
+      <h2 class="form-title">Send me the<br><em>guide now</em></h2>
+      <p class="form-sub">Enter your name and email — I'll send it right to your inbox. No spam.</p>
+      <div class="divider"></div>
+
+      <form id="mc-form" onsubmit="handleSubmit(event)">
+        <!-- Mailchimp honeypot — do not remove -->
+        <input type="text" name="b_9bc30daf9c59f625e466a2c68_3268001efd" tabindex="-1" value="" style="position:absolute;left:-5000px;" aria-hidden="true">
+        <!-- Lead source tag -->
+        <input type="hidden" name="LEADSOURCE" value="readiness-guide">
+
+        <div class="field-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="FNAME" placeholder="Your first name" required>
+        </div>
+        <div class="field-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="EMAIL" placeholder="you@example.com" required>
+        </div>
+        <button type="submit" class="submit-btn" id="submit-btn">Send Me the Guide →</button>
+      </form>
+
+      <p class="form-note">No spam, ever. Unsubscribe anytime.<br>You'll receive occasional tax tips from Mondragon Tax &amp; Advisory.</p>
+    </div>
+
+    <!-- Success state -->
+    <div class="success-state" id="success-state">
+      <div class="success-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <h2 class="success-title">Guide is<br><em>on its way.</em></h2>
+      <p class="success-text">Check your inbox — it should arrive within a couple minutes. If you don't see it, check your spam folder and add brandon@mondragonbookkeeping.com to your contacts.</p>
+      <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="success-link" target="_blank">Set Up Your Free Portal →</a>
+    </div>
+
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span class="footer-text">© 2026 Mondragon Tax &amp; Advisory &nbsp;·&nbsp; San Diego, CA &nbsp;·&nbsp; <a href="https://www.mondragonbookkeeping.com" class="footer-link">mondragonbookkeeping.com</a></span>
+    <span class="footer-text">This content is for informational purposes only and does not constitute specific tax or legal advice.</span>
+  </footer>
+
+</div>
+
+<script>
+function handleSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  const btn = document.getElementById('submit-btn');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  const email = form.querySelector('[name="EMAIL"]').value;
+  const fname = form.querySelector('[name="FNAME"]').value;
+  const honeypot = form.querySelector('[name="b_9bc30daf9c59f625e466a2c68_3268001efd"]').value;
+
+  const callbackName = 'mc_cb_' + Date.now();
+  const params = new URLSearchParams({
+    u: '9bc30daf9c59f625e466a2c68',
+    id: '3268001efd',
+    f_id: '004aa3e1f0',
+    EMAIL: email,
+    FNAME: fname,
+    LEADSOURCE: 'readiness-guide',
+    ['b_9bc30daf9c59f625e466a2c68_3268001efd']: honeypot,
+    c: callbackName
+  });
+
+  window[callbackName] = function(data) {
+    delete window[callbackName];
+    if (data.result === 'success') {
+      document.getElementById('form-wrap').style.display = 'none';
+      document.getElementById('success-state').classList.add('visible');
+    } else {
+      // Already subscribed is fine — show success anyway
+      if (data.msg && data.msg.toLowerCase().includes('already subscribed')) {
+        document.getElementById('form-wrap').style.display = 'none';
+        document.getElementById('success-state').classList.add('visible');
+      } else {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    }
+  };
+
+  const script = document.createElement('script');
+  script.src = 'https://mondragonbookkeeping.us14.list-manage.com/subscribe/post-json?' + params.toString();
+  script.onerror = function() {
+    btn.textContent = 'Something went wrong — try again';
+    btn.disabled = false;
+  };
+  document.body.appendChild(script);
+}
+</script>
+
+</body>
+</html>
