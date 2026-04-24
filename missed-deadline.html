@@ -505,6 +505,10 @@
           <input type="text" id="fname" name="FNAME" placeholder="Your first name" required>
         </div>
         <div class="field-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="LNAME" placeholder="Your last name" required>
+        </div>
+        <div class="field-group">
           <label for="email">Email Address</label>
           <input type="email" id="email" name="EMAIL" placeholder="you@example.com" required>
         </div>
@@ -547,15 +551,16 @@ function handleSubmit(event) {
 
   const email = form.querySelector('[name="EMAIL"]').value;
   const fname = form.querySelector('[name="FNAME"]').value;
+  const lname = form.querySelector('[name="LNAME"]').value;
   const honeypot = form.querySelector('[name="b_9bc30daf9c59f625e466a2c68_3268001efd"]').value;
 
   const callbackName = 'mc_cb_' + Date.now();
   const params = new URLSearchParams({
     u: '9bc30daf9c59f625e466a2c68',
     id: '3268001efd',
-    f_id: '004aa3e1f0',
     EMAIL: email,
     FNAME: fname,
+    LNAME: lname,
     LEADSOURCE: 'missed-deadline',
     ['b_9bc30daf9c59f625e466a2c68_3268001efd']: honeypot,
     c: callbackName

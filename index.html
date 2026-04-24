@@ -1928,6 +1928,10 @@
           <input type="text" name="FNAME" placeholder="Your first name" required>
         </div>
         <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" name="LNAME" placeholder="Your last name" required>
+        </div>
+        <div class="form-group">
           <label>Email Address</label>
           <input type="email" name="EMAIL" placeholder="you@example.com" required>
         </div>
@@ -2080,15 +2084,16 @@ function handleChecklistSubmit(event) {
 
   const email = form.querySelector('[name="EMAIL"]').value;
   const fname = form.querySelector('[name="FNAME"]').value;
+  const lname = form.querySelector('[name="LNAME"]').value;
   const honeypot = form.querySelector('[name="b_9bc30daf9c59f625e466a2c68_3268001efd"]').value;
 
   const callbackName = 'mc_callback_' + Date.now();
   const params = new URLSearchParams({
     u: '9bc30daf9c59f625e466a2c68',
     id: '3268001efd',
-    f_id: '004aa3e1f0',
     EMAIL: email,
     FNAME: fname,
+    LNAME: lname,
     ['b_9bc30daf9c59f625e466a2c68_3268001efd']: honeypot,
     c: callbackName
   });
