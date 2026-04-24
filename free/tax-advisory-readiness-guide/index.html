@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
 <title>Tax Advisory Readiness Guide | Mondragon Tax & Advisory</title>
 <template id="__bundler_thumbnail" data-bg-color="#16181F">
   <svg viewBox="0 0 816 1056" xmlns="http://www.w3.org/2000/svg">
@@ -420,9 +421,123 @@
     .page { margin: 0; box-shadow: none; page-break-after: always; }
     .no-print { display: none; }
   }
+
+
+  /* ── RESOURCE TOOLBAR ── */
+  .resource-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(22, 24, 31, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(247,243,236,0.1);
+    padding: 14px 20px;
+  }
+
+  .resource-toolbar-inner {
+    max-width: 816px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .toolbar-btn {
+    appearance: none;
+    border: 1px solid rgba(247,243,236,0.18);
+    background: transparent;
+    color: var(--cream);
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 6px;
+    padding: 11px 16px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .toolbar-btn:hover {
+    background: rgba(247,243,236,0.08);
+    border-color: rgba(247,243,236,0.3);
+    transform: translateY(-1px);
+  }
+
+  .toolbar-btn-primary {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: white;
+  }
+
+  .toolbar-btn-primary:hover {
+    background: #0f66e4;
+    border-color: #0f66e4;
+  }
+
+  .toolbar-note {
+    width: 100%;
+    text-align: right;
+    color: rgba(247,243,236,0.55);
+    font-size: 12px;
+  }
+
+  @page {
+    size: Letter;
+    margin: 0;
+  }
+
+  @media print {
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: white !important;
+    }
+
+    .resource-toolbar, .no-print {
+      display: none !important;
+    }
+
+    .page {
+      width: 8.5in !important;
+      min-height: 11in !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    .question-block,
+    .callout,
+    .client-card,
+    .cal-item,
+    .check-section,
+    .pull-quote,
+    .dark-band,
+    table, tr, td, th {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+  }
+
 </style>
 </head>
 <body>
+
+<div class="resource-toolbar no-print">
+  <div class="resource-toolbar-inner">
+    <a class="toolbar-btn toolbar-btn-primary" href="./tax-advisory-readiness-guide.pdf" download="Tax-Advisory-Readiness-Guide.pdf">Download PDF</a>
+    <button class="toolbar-btn" type="button" onclick="window.print()">Print / Save PDF</button>
+    <div class="toolbar-note">Upload <code>tax-advisory-readiness-guide.pdf</code> into this same folder and the download button will work automatically.</div>
+  </div>
+</div>
+
 
 <!-- ══════════════════════════════════════ -->
 <!-- PAGE 1: COVER                          -->
