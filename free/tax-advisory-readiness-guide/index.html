@@ -65,6 +65,56 @@
     overflow: hidden;
   }
 
+  /* Page-specific fit fixes */
+  .page.page-q1 .inner,
+  .page.page-reactive .inner {
+    padding-top: 56px;
+    padding-bottom: 52px;
+  }
+
+  .page.page-q1 .page-header,
+  .page.page-reactive .page-header {
+    margin-bottom: 38px;
+    padding-bottom: 20px;
+  }
+
+  .page.page-q1 .section-intro,
+  .page.page-reactive .section-intro {
+    margin-bottom: 28px;
+    line-height: 1.65;
+  }
+
+  .page.page-q1 .question-block {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+  }
+
+  .page.page-q1 .question-number { margin-bottom: 4px; }
+  .page.page-q1 .question-text { font-size: 22px; margin-bottom: 10px; }
+  .page.page-q1 .question-why { margin-bottom: 6px; }
+  .page.page-q1 .question-answer { font-size: 13.5px; line-height: 1.65; }
+  .page.page-q1 .question-signal { margin-top: 8px; font-size: 11px; }
+
+  .page.page-reactive .compare-table { margin-bottom: 22px; }
+  .page.page-reactive .compare-table th { padding: 10px 14px; }
+  .page.page-reactive .compare-table td {
+    padding: 10px 14px;
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
+  .page.page-reactive .pull-quote {
+    margin: 20px 0;
+    font-size: 20px;
+    line-height: 1.35;
+  }
+  .page.page-reactive .dark-band {
+    margin-top: 16px !important;
+    margin-bottom: 0;
+    padding: 22px 24px;
+  }
+  .page.page-reactive .dark-band p { font-size: 13px; line-height: 1.6; }
+
+
   /* ── COVER PAGE ── */
   .cover {
     background: var(--charcoal);
@@ -438,7 +488,7 @@
     max-width: 816px;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
   }
@@ -493,6 +543,8 @@
       display: none !important;
     }
 
+    body { background: white !important; }
+
     .page {
       width: 8.5in !important;
       height: 11in !important;
@@ -501,6 +553,7 @@
       box-shadow: none !important;
       page-break-after: always;
       break-after: page;
+      overflow: hidden !important;
     }
 
     .page:last-child {
@@ -528,7 +581,6 @@
 <div class="resource-toolbar no-print">
   <div class="resource-toolbar-inner">
     <a class="toolbar-btn toolbar-btn-primary" href="./tax-advisory-readiness-guide.pdf" download="Tax-Advisory-Readiness-Guide.pdf">Download PDF</a>
-    <button class="toolbar-btn" type="button" onclick="window.print()">Print / Save PDF</button>
     </div>
 </div>
 
@@ -622,7 +674,7 @@
 <!-- ══════════════════════════════════════ -->
 <!-- PAGE 3: 5 QUESTIONS                   -->
 <!-- ══════════════════════════════════════ -->
-<div class="page">
+<div class="page page-q1">
 <div class="inner">
   <div class="page-header">
     <div class="page-header-logo">
@@ -701,7 +753,7 @@
 <!-- ══════════════════════════════════════ -->
 <!-- PAGE 5: REACTIVE vs PROACTIVE         -->
 <!-- ══════════════════════════════════════ -->
-<div class="page">
+<div class="page page-reactive">
 <div class="inner">
   <div class="page-header">
     <div class="page-header-logo">
