@@ -1,1 +1,102 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Getting Started — Portal Section</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #F7F3EC;
+    font-family: 'DM Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    width: 760px;
+  }
+
+  .section {
+    background: #F7F3EC;
+    padding: 40px 0 8px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1775FD;
+    margin-bottom: 18px;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #EDE8DF;
+    border: 1px solid #EDE8DF;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .step-card {
+    background: #F7F3EC;
+    padding: 30px 26px 32px;
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: rgba(23,117,253,0.2);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .step-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1A1C24;
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
+  }
+
+  .step-body {
+    font-size: 13px;
+    font-weight: 300;
+    color: #7A7D8A;
+    line-height: 1.65;
+  }
+
+  .step-body strong {
+    color: #1A1C24;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="section">
+  <div class="section-label">Getting Started</div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-title">Check your Actions</div>
+      <p class="step-body">Any pending <strong>Forms</strong>, <strong>Contracts</strong>, or <strong>Tasks</strong> appear at the top of this page. That's your first stop every time you log in.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-title">Upload documents</div>
+      <p class="step-body">Drop requested documents in <strong>Files</strong>. Completed returns, reports, and anything shared with you live there too.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-title">Message me here</div>
+      <p class="step-body">Use <strong>Inbox</strong> for all questions, updates, or anything time-sensitive. I respond within one business day.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
