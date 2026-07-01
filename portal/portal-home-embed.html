@@ -5,18 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portal Home — Mondragon Tax & Advisory</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* ════════════════════════════════════════════════
+     Mondragon Tax & Advisory — Brand tokens
+     Matches 00_BRAND-GUIDE.md + the redone site files
+     (index.html / readiness-guide.html :root system)
+  ════════════════════════════════════════════════ */
+  :root {
+    --cream:         #F7F3EC;   /* Canvas Cream — primary light bg  */
+    --cream-dark:    #EDE8DF;   /* borders / dividers on light      */
+    --charcoal:      #16181F;   /* Charcoal — ink / dark sections   */
+    --charcoal-mid:  #252830;
+    --sage:          #DFE7E0;   /* Sage Mist — panels / accents     */
+    --blue:          #1775FD;   /* Accent Blue — the one pop color   */
+    --blue-light:    #4A93FD;   /* soft accent / dark-section italic */
+    --blue-tint:     rgba(23,117,253,0.08);
+    --blue-border:   rgba(23,117,253,0.18);
+    --text:          #1A1C24;   /* primary body ink (site --text)    */
+    --text-mid:      #4A4D5A;
+    --text-light:    #7A7D8A;   /* secondary text / captions         */
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans:  'DM Sans', system-ui, sans-serif;
+  }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background: #F7F3EC;
+    background: var(--cream);
     /* ┌─────────────────────────────────────────────┐
        │  SET ASSEMBLY BACKGROUND COLOR TO: #F7F3EC  │
        └─────────────────────────────────────────────┘ */
-    font-family: 'DM Sans', sans-serif;
-    color: #1A1C24;
+    font-family: var(--sans);
+    color: var(--text);
     padding: 28px 0 44px;
+    -webkit-font-smoothing: antialiased;
   }
 
   .wrap {
@@ -32,11 +55,11 @@
     gap: 14px;
     margin: 40px 0;
   }
-  .divider-line { flex: 1; height: 1px; background: #EDE8DF; }
+  .divider-line { flex: 1; height: 1px; background: var(--cream-dark); }
   .divider-dot {
     width: 5px; height: 5px;
     border-radius: 50%;
-    background: #1775FD;
+    background: var(--blue);
     opacity: 0.35;
     flex-shrink: 0;
   }
@@ -48,27 +71,27 @@
     font-weight: 600;
     letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: #1775FD;
+    color: var(--blue);
     margin-bottom: 8px;
   }
   .section-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--serif);
     font-size: 34px;
     font-weight: 300;
-    color: #1A1C24;
+    color: var(--text);
     line-height: 1.1;
     letter-spacing: -0.01em;
   }
   .section-title em {
     font-style: italic;
-    color: #1775FD;
+    color: var(--blue);
   }
 
   /* ════════════════════════════════════
      WELCOME BLOCK — dark band
   ════════════════════════════════════ */
   .welcome {
-    background: #16181F;
+    background: var(--charcoal);
     border-radius: 4px;
     padding: 34px 36px 28px;
     position: relative;
@@ -79,13 +102,13 @@
     position: absolute;
     left: 0; top: 0; bottom: 0;
     width: 3px;
-    background: #1775FD;
+    background: var(--blue);
     border-radius: 4px 0 0 4px;
   }
   /* decorative watermark M */
   .welcome::after {
     content: 'M';
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--serif);
     font-size: 200px;
     font-weight: 300;
     color: rgba(247,243,236,0.025);
@@ -101,21 +124,21 @@
     font-weight: 600;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: #1775FD;
+    color: var(--blue);
     margin-bottom: 12px;
   }
   .welcome-heading {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--serif);
     font-size: 30px;
     font-weight: 300;
-    color: #F7F3EC;
+    color: var(--cream);
     line-height: 1.2;
     margin-bottom: 14px;
     letter-spacing: -0.01em;
   }
   .welcome-heading em {
     font-style: italic;
-    color: #4A93FD;
+    color: var(--blue-light);
   }
   .welcome-text {
     font-size: 13px;
@@ -136,7 +159,7 @@
   .pulse-dot {
     width: 8px; height: 8px;
     border-radius: 50%;
-    background: #1775FD;
+    background: var(--blue);
     flex-shrink: 0;
     position: relative;
   }
@@ -173,7 +196,7 @@
 
   .step-card {
     background: #fff;
-    border: 1px solid #EDE8DF;
+    border: 1px solid var(--cream-dark);
     border-radius: 4px;
     padding: 28px 22px 26px;
     position: relative;
@@ -187,15 +210,15 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #1775FD, rgba(23,117,253,0.3));
+    background: linear-gradient(90deg, var(--blue), rgba(23,117,253,0.3));
   }
   .step-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(26,28,36,0.09), 0 0 0 1px rgba(23,117,253,0.12);
+    box-shadow: 0 10px 30px rgba(22,24,31,0.09), 0 0 0 1px rgba(23,117,253,0.12);
   }
   /* large watermark number */
   .step-watermark {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--serif);
     font-size: 90px;
     font-weight: 300;
     color: rgba(23,117,253,0.06);
@@ -210,31 +233,31 @@
   .step-badge {
     display: inline-flex;
     align-items: center;
-    background: rgba(23,117,253,0.09);
-    border: 1px solid rgba(23,117,253,0.18);
+    background: var(--blue-tint);
+    border: 1px solid var(--blue-border);
     border-radius: 2px;
     padding: 3px 9px;
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.16em;
-    color: #1775FD;
+    color: var(--blue);
     margin-bottom: 14px;
   }
   .step-title {
     font-size: 14px;
     font-weight: 600;
-    color: #1A1C24;
+    color: var(--text);
     margin-bottom: 10px;
     letter-spacing: 0.01em;
   }
   .step-body {
     font-size: 12.5px;
     font-weight: 300;
-    color: #7A7D8A;
+    color: var(--text-light);
     line-height: 1.65;
   }
   .step-body strong {
-    color: #1A1C24;
+    color: var(--text);
     font-weight: 500;
   }
 
@@ -249,7 +272,7 @@
 
   .guide-card {
     background: #fff;
-    border: 1px solid #EDE8DF;
+    border: 1px solid var(--cream-dark);
     border-radius: 4px;
     padding: 20px 22px;
     display: flex;
@@ -265,7 +288,7 @@
 
   .guide-icon {
     width: 36px; height: 36px;
-    background: rgba(23,117,253,0.08);
+    background: var(--blue-tint);
     border: 1px solid rgba(23,117,253,0.16);
     border-radius: 3px;
     display: flex;
@@ -284,49 +307,77 @@
   .guide-name {
     font-size: 13px;
     font-weight: 600;
-    color: #1A1C24;
+    color: var(--text);
     margin-bottom: 5px;
     letter-spacing: 0.01em;
   }
   .guide-desc {
     font-size: 12px;
     font-weight: 300;
-    color: #7A7D8A;
+    color: var(--text-light);
     line-height: 1.6;
   }
 
   /* ════════════════════════════════════
-     FOOTER
+     FOOTER — brand lockup
   ════════════════════════════════════ */
   .footer {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 13px;
   }
-  .logo-bars {
-    display: flex;
-    align-items: flex-end;
-    gap: 3px;
+  /* Official mark — ascending blocks + baseline (charcoal body, blue apex) */
+  .footer-mark {
+    height: 30px;
+    width: auto;
     flex-shrink: 0;
-  }
-  .logo-bars span {
-    width: 4px;
-    border-radius: 3px 3px 0 0;
     display: block;
   }
-  .logo-bars span:nth-child(1) { height: 9px;  background: rgba(23,117,253,0.3); }
-  .logo-bars span:nth-child(2) { height: 13px; background: rgba(23,117,253,0.6); }
-  .logo-bars span:nth-child(3) { height: 19px; background: #1775FD; }
 
-  .footer-text {
-    font-size: 12px;
-    font-weight: 300;
-    color: #9A9DAA;
-    line-height: 1.6;
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.15;
+    letter-spacing: 0.01em;
   }
-  .footer-text strong { font-weight: 500; color: #7A7D8A; }
-  .footer-text a { color: #1775FD; text-decoration: none; }
-  .footer-text a:hover { text-decoration: underline; }
+  .footer-brand small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+  .footer-meta {
+    margin-left: auto;
+    text-align: right;
+    font-size: 11.5px;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  .footer-meta a { color: var(--blue); text-decoration: none; }
+  .footer-meta a:hover { text-decoration: underline; }
+
+  .footer-note {
+    margin-top: 18px;
+    font-size: 10.5px;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.6;
+    max-width: 620px;
+  }
+
+  @media (max-width: 560px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .guide-grid { grid-template-columns: 1fr; }
+    .footer { flex-wrap: wrap; gap: 10px; }
+    .footer-meta { margin-left: 0; text-align: left; width: 100%; }
+  }
 </style>
 </head>
 <body>
@@ -466,11 +517,22 @@
   <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
 
   <div class="footer">
-    <div class="logo-bars"><span></span><span></span><span></span></div>
-    <p class="footer-text">
-      <strong>Mondragon Tax &amp; Advisory</strong> · San Diego, CA
-    </p>
+    <svg class="footer-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134 72" role="img" aria-label="Mondragon Tax & Advisory">
+      <rect x="14" y="33" width="24" height="24" rx="5" fill="#16181F"/>
+      <rect x="54" y="22" width="24" height="24" rx="5" fill="#16181F"/>
+      <rect x="94" y="11" width="24" height="24" rx="5" fill="#1775FD"/>
+      <rect x="2" y="62" width="130" height="6.5" rx="3.25" fill="#16181F"/>
+    </svg>
+    <div class="footer-brand">
+      Mondragon Tax &amp; Advisory
+      <small>Proactive, year-round</small>
+    </div>
+    <div class="footer-meta">
+      <a href="https://mondragontax.com">mondragontax.com</a><br>
+      San Diego, CA · remote-friendly
+    </div>
   </div>
+  <p class="footer-note">Your documents and messages in this portal are kept private and secure. For questions about your engagement or scope of services, message me in Inbox.</p>
 
 </div>
 </body>
