@@ -63,6 +63,8 @@
   /* ── CATALOG ── */
   #resources { padding: 72px 48px 96px; max-width: 1000px; margin: 0 auto; }
   .catalog { display: flex; flex-direction: column; gap: 26px; }
+  .catalog-intro { font-size: 16px; font-weight: 300; line-height: 1.85; color: var(--text-mid); max-width: 660px; margin: 0 0 44px; }
+  .catalog-intro strong { font-weight: 500; color: var(--text); }
 
   .res-banner {
     display: flex; border: 1px solid var(--cream-dark); border-radius: 4px;
@@ -127,10 +129,28 @@
   .footer-legal a { font-size: 11px; font-weight: 400; letter-spacing: 0.08em; color: rgba(247,243,236,0.2); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
   .footer-legal a:hover { color: rgba(247,243,236,0.5); }
 
+  /* ── MOBILE NAV / HAMBURGER ── */
+  .nav-toggle { display:none; flex-direction:column; justify-content:center; gap:5px; width:44px; height:44px; padding:0; background:transparent; border:none; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+  .nav-toggle span { display:block; width:24px; height:2px; margin:0 auto; background:#F7F3EC; border-radius:2px; transition:transform .28s ease, opacity .2s ease; }
+  .nav-toggle.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity:0; }
+  .nav-toggle.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  .mobile-menu { position:fixed; top:72px; left:0; right:0; z-index:99; background:rgba(22,24,31,0.98); backdrop-filter:blur(12px); border-bottom:1px solid rgba(23,117,253,0.15); display:flex; flex-direction:column; padding:8px 20px 24px; transform:translateY(-12px); opacity:0; visibility:hidden; pointer-events:none; transition:opacity .25s ease, transform .25s ease, visibility .25s; }
+  .mobile-menu.open { transform:translateY(0); opacity:1; visibility:visible; pointer-events:auto; }
+  .mobile-menu a { font-family:var(--sans); font-size:15px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase; color:rgba(247,243,236,0.75); text-decoration:none; padding:16px 4px; border-bottom:1px solid rgba(247,243,236,0.08); transition:color .2s; }
+  .mobile-menu a:hover, .mobile-menu a:active { color:#F7F3EC; }
+  .mobile-menu-ctas { display:flex; flex-direction:column; gap:12px; margin-top:24px; }
+  .mobile-menu-ctas a { text-align:center; border-bottom:none; padding:14px 20px; }
+  .mobile-menu-ctas .btn-ghost { color:rgba(247,243,236,0.85); }
+  .mobile-menu-ctas .btn-gold { color:#16181F; }
+  body.menu-open { overflow:hidden; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    nav { padding: 0 24px; }
+    nav { padding: 0 20px; }
     nav .nav-links { display: none; }
+    .nav-ctas { display: none; }
+    .nav-toggle { display: flex; }
     #page-header { padding: 120px 24px 60px; }
     #resources { padding: 56px 24px 72px; }
     .res-banner { flex-direction: column; }
@@ -154,16 +174,31 @@
     <div class="nav-logo-text">Mondragon<small>Tax &amp; Advisory</small></div>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html#about">About</a></li>
     <li><a href="index.html#process">How It Works</a></li>
+    <li><a href="index.html#about">About</a></li>
     <li><a href="index.html#pricing">Pricing</a></li>
     <li><a href="resources.html" style="color:#F7F3EC;">Resources</a></li>
   </ul>
   <div class="nav-ctas">
     <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-ghost" target="_blank">Client Portal</a>
-    <a href="index.html#guide" class="btn-gold">Free Guide</a>
+    <a href="readiness-guide.html" class="btn-gold">Free Guide</a>
   </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#process">How It Works</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#pricing">Pricing</a>
+  <a href="resources.html">Resources</a>
+  <div class="mobile-menu-ctas">
+    <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-ghost" target="_blank">Client Portal</a>
+    <a href="readiness-guide.html" class="btn-gold">Free Guide</a>
+  </div>
+</div>
 
 <!-- PAGE HEADER -->
 <section id="page-header">
@@ -178,6 +213,7 @@
 
 <!-- CATALOG -->
 <section id="resources">
+  <p class="catalog-intro">Teaching people how their numbers actually work has always been my favorite part of this job, so building a place to share what I know felt natural. I'll keep adding new guides and tools here throughout the year. <strong>If you'd like a heads-up when the next one lands, grab any resource below — that puts you on the list.</strong></p>
   <div class="catalog">
 
     <!-- READINESS GUIDE -->
@@ -253,7 +289,7 @@
     <h2 class="cta-headline">Let's look at<br><em>your numbers.</em></h2>
     <p class="cta-sub">Book a free consultation. We'll talk through where you're at, and I'll tell you what I'd do in your position.</p>
     <div class="cta-actions">
-      <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-primary" target="_blank">
+      <a href="https://calendly.com/mondragonbookkeeping/initial-consultation" class="btn-primary" target="_blank">
         Book a Free Consultation
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 4l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -313,6 +349,43 @@
     </div>
   </div>
 </footer>
+
+<script>
+// ── MOBILE MENU ──
+(function () {
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  const nav = document.querySelector('nav');
+  if (!toggle || !menu) return;
+
+  function openMenu() {
+    menu.style.top = nav.offsetHeight + 'px';
+    toggle.classList.add('open');
+    menu.classList.add('open');
+    document.body.classList.add('menu-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close menu');
+  }
+  function closeMenu() {
+    toggle.classList.remove('open');
+    menu.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+  }
+
+  toggle.addEventListener('click', () => {
+    menu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
+})();
+</script>
 
 </body>
 </html>

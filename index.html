@@ -1504,12 +1504,16 @@
     50% { opacity: 0.4; }
   }
 
+  #resources-promo { background: var(--charcoal); padding: 120px 48px; text-align: center; }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    nav { padding: 0 24px; }
+    nav { padding: 0 20px; }
     .nav-links { display: none; }
+    .nav-ctas { display: none; }
+    .nav-toggle { display: flex; }
     #hero { padding: 100px 24px 60px; }
-    #pain, #process, #pricing, #testimonials, #guide, #cta { padding: 80px 24px; }
+    #pain, #process, #pricing, #testimonials, #cta, #resources-promo { padding: 80px 24px; }
     #about { grid-template-columns: 1fr; padding: 80px 24px; gap: 48px; }
     #guide { grid-template-columns: 1fr; gap: 48px; }
     .pain-grid { grid-template-columns: 1fr; }
@@ -1675,6 +1679,85 @@
     *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
     .pcard:hover, .val-card:hover{ transform:none !important; }
   }
+
+  /* ── MOBILE NAV / HAMBURGER (2026-07) ── */
+  .nav-toggle{
+    display:none;            /* shown only in the <=900px media query */
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:44px; height:44px;
+    padding:0;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .nav-toggle span{
+    display:block;
+    width:24px; height:2px;
+    margin:0 auto;
+    background:#F7F3EC;
+    border-radius:2px;
+    transition:transform .28s ease, opacity .2s ease;
+  }
+  .nav-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2){ opacity:0; }
+  .nav-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu{
+    position:fixed;
+    top:72px; left:0; right:0;
+    z-index:99;
+    background:rgba(22,24,31,0.98);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(23,117,253,0.15);
+    display:flex;
+    flex-direction:column;
+    padding:8px 20px 24px;
+    transform:translateY(-12px);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease, visibility .25s;
+  }
+  .mobile-menu.open{
+    transform:translateY(0);
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+  }
+  .mobile-menu a{
+    font-family:var(--sans);
+    font-size:15px;
+    font-weight:400;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:rgba(247,243,236,0.75);
+    text-decoration:none;
+    padding:16px 4px;
+    border-bottom:1px solid rgba(247,243,236,0.08);
+    transition:color .2s;
+  }
+  .mobile-menu a:hover,
+  .mobile-menu a:active{ color:#F7F3EC; }
+  .mobile-menu-ctas{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:24px;
+  }
+  .mobile-menu-ctas a{
+    text-align:center;
+    border-bottom:none;
+    padding:14px 20px;
+  }
+  /* keep the desktop button look inside the mobile panel */
+  .mobile-menu-ctas .btn-ghost{ color:rgba(247,243,236,0.85); }
+  .mobile-menu-ctas .btn-gold{ color:#16181F; }
+
+  /* lock body scroll when the menu is open */
+  body.menu-open{ overflow:hidden; }
 </style>
 </head>
 <body>
@@ -1691,18 +1774,33 @@
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
     <li><a href="#process">How It Works</a></li>
-    <li><a href="#values">Values</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#values">Values</a></li>
     <li><a href="resources.html">Resources</a></li>
-    <li><a href="#guide">Free Guide</a></li>
   </ul>
   <div class="nav-ctas">
     <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-ghost" target="_blank">Client Portal</a>
-    <a href="#guide" class="btn-gold">Free Guide</a>
+    <a href="resources.html" class="btn-gold">Free Guide</a>
   </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#process">How It Works</a>
+  <a href="#about">About</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#values">Values</a>
+  <a href="resources.html">Resources</a>
+  <div class="mobile-menu-ctas">
+    <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-ghost" target="_blank">Client Portal</a>
+    <a href="resources.html" class="btn-gold">Free Guide</a>
+  </div>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -1717,8 +1815,8 @@
     The tax strategies that reduce a bill are built throughout the year — not filed in April. Mondragon Tax & Advisory provides the bookkeeping infrastructure and tax guidance to make that possible.
   </p>
   <div class="hero-actions">
-    <a href="#guide" class="btn-primary">
-      Get the Free Guide
+    <a href="resources.html" class="btn-primary">
+      Browse Free Resources
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 4l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
     <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-outline" target="_blank">
@@ -1859,10 +1957,10 @@
       Mondragon Tax &amp; Advisory is a tax &amp; bookkeeping practice based in San Diego, California, serving small businesses and individuals across California and nationwide.
     </p>
     <p class="about-bio">
-      We work across two primary service areas. The first is ongoing monthly bookkeeping — financial close, reconciliations, payroll, and financial statement preparation — delivered as a year-round engagement for business owners who need consistent, reliable financial infrastructure. The second is advisory-level tax preparation and planning, available as a standalone service or as an add-on to any bookkeeping engagement. Every tax return includes a structured advisory review: findings, implications, and forward-looking recommendations tailored to each client's specific situation.
+      I work across two primary service areas. The first is ongoing monthly bookkeeping — financial close, reconciliations, payroll, and financial statement preparation — delivered as a year-round engagement for business owners who need consistent, reliable financial infrastructure. The second is advisory-level tax preparation and planning, available as a standalone service or as an add-on to any bookkeeping engagement. Every tax return includes a structured advisory review: findings, implications, and forward-looking recommendations tailored to each client's specific situation.
     </p>
     <p class="about-bio">
-      We work with a range of client types: owner-operated businesses in construction and the trades, cafés and restaurants whether finding their footing or scaling up, rental property owners managing single or multi-property portfolios, investors navigating capital gains and portfolio income, and solopreneurs and self-employed service providers building sustainable operations. The common thread is clients who need more than basic compliance — they need a practitioner who understands their numbers, communicates clearly, and stays engaged throughout the year.
+      I work with a range of client types: owner-operated businesses in construction and the trades, cafés and restaurants whether finding their footing or scaling up, rental property owners managing single or multi-property portfolios, investors navigating capital gains and portfolio income, and solopreneurs and self-employed service providers building sustainable operations. The common thread is clients who need more than basic compliance — they need a practitioner who understands their numbers, communicates clearly, and stays engaged throughout the year.
     </p>
     <p class="about-bio">
       Brandon Mondragon, founder and principal, manages all client work directly. Flat-rate pricing, a secure client portal, and consistent direct access are standard across every engagement.
@@ -1906,7 +2004,7 @@
       <div class="pricing-feature"><span class="pricing-feature-check">✓</span> Bi-annual check-in calls</div>
       <div class="pricing-feature"><span class="pricing-feature-check">✓</span> Secure client portal access</div>
       <div class="pricing-feature pricing-feature-addon"><span class="pricing-feature-check">+</span> Tax return services available as add-on</div>
-      <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="pricing-cta pricing-cta-light" target="_blank">Get Started</a>
+      <a href="https://calendly.com/mondragonbookkeeping/initial-consultation" class="pricing-cta pricing-cta-light" target="_blank">Get Started</a>
     </div>
     <!-- Growth (Featured) -->
     <div class="pricing-card featured">
@@ -1923,11 +2021,11 @@
       <div class="pricing-feature"><span class="pricing-feature-check">✓</span> Payroll (up to 5 employees)</div>
       <div class="pricing-feature"><span class="pricing-feature-check">✓</span> Bi-annual tax planning & advisory call</div>
       <div class="pricing-feature pricing-feature-addon"><span class="pricing-feature-check">+</span> Tax returns available as add-on — payment plans included</div>
-      <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="pricing-cta pricing-cta-gold" target="_blank">Get Started</a>
+      <a href="https://calendly.com/mondragonbookkeeping/initial-consultation" class="pricing-cta pricing-cta-gold" target="_blank">Get Started</a>
     </div>
     <!-- Executive -->
     <div class="pricing-card">
-      <div class="pricing-limited"><span class="pricing-limited-dot"></span> Limited — 4 Spots</div>
+      <div class="pricing-limited"><span class="pricing-limited-dot"></span> Limited — 6 Spots</div>
       <div class="pricing-tier">Executive</div>
       <div class="pricing-name">First-Priority Access</div>
       <div class="pricing-tagline">Controller-level oversight, on-call advisory, and 12-week forecasting.</div>
@@ -1944,7 +2042,7 @@
       <div class="pricing-feature"><span class="pricing-feature-check">✓</span> Quarterly tax strategy, planning & oversight</div>
       <div class="pricing-feature"><span class="pricing-feature-check">✓</span> Entity compliance & multi-entity support</div>
       <div class="pricing-feature pricing-feature-addon"><span class="pricing-feature-check">+</span> Tax returns available as add-on — payment plans included</div>
-      <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="pricing-cta pricing-cta-light" target="_blank">Claim a Spot</a>
+      <a href="https://calendly.com/mondragonbookkeeping/initial-consultation" class="pricing-cta pricing-cta-light" target="_blank">Claim a Spot</a>
     </div>
   </div>
 
@@ -2010,7 +2108,7 @@
         <span class="pricing-tax-payment-label">Business owners</span>
         <span class="pricing-tax-payment-val">Payment plans available — discussed in consultation</span>
       </div>
-      <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="pricing-cta pricing-cta-gold" style="margin-top:28px" target="_blank">Get a Quote →</a>
+      <a href="https://calendly.com/mondragonbookkeeping/initial-consultation" class="pricing-cta pricing-cta-gold" style="margin-top:28px" target="_blank">Get a Quote →</a>
     </div>
   </div>
 
@@ -2047,7 +2145,7 @@
         <div class="val-num">01</div>
         <div class="val-icon"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1 8s2.6-4.5 7-4.5 7 4.5 7 4.5-2.6 4.5-7 4.5S1 8 1 8z"/><circle cx="8" cy="8" r="2"/></svg></div>
         <div class="val-title">Clarity over complexity</div>
-        <div class="val-desc">Tax and accounting are complex. Our job is to make sure you never feel that complexity. Every memo, every call — the most important thing is said first, and said plainly.</div>
+        <div class="val-desc">Tax and bookkeeping are complex. Our job is to make sure you never feel that complexity. Every memo, every call — the most important thing is said first, and said plainly.</div>
       </div>
 
       <div class="val-card">
@@ -2094,59 +2192,16 @@
   </div>
 </section>
 
-<!-- FREE CHECKLIST -->
-<section id="guide">
-  <div>
-    <div class="section-label">Free Resource</div>
-    <h2 class="checklist-title">The Tax Advisory<br><em>Readiness Guide</em></h2>
-    <p class="checklist-desc">Not ready to book a call yet? Start here. This free guide walks you through what every business owner, investor, and property owner should understand before sitting down with a tax advisor — and why it changes everything.</p>
-    <ul class="checklist-items">
-      <li class="checklist-item"><span class="checklist-check">✓</span> 5 questions every business owner should be able to answer about their taxes</li>
-      <li class="checklist-item"><span class="checklist-check">✓</span> The real difference between a tax preparer and a tax advisor</li>
-      <li class="checklist-item"><span class="checklist-check">✓</span> A year-round planning calendar — what proactive tax planning actually looks like</li>
-      <li class="checklist-item"><span class="checklist-check">✓</span> Missed opportunities by situation: business owner, rental property, investor</li>
-      <li class="checklist-item"><span class="checklist-check">✓</span> How to prepare for your first advisory conversation</li>
-    </ul>
-    <div style="margin-top:28px;padding:16px 20px;background:rgba(23,117,253,0.06);border:1px solid rgba(23,117,253,0.15);border-radius:3px;">
-      <p style="font-size: 13px; font-weight: 300; color: rgba(247,243,236,0.55); line-height: 1.6">
-        <span style="font-weight:500;color:rgba(247,243,236,0.9);">Who this is for:</span> Small business owners, self-employed professionals, rental property owners, and investors who are ready to stop reacting to their taxes and start planning around them.
-      </p>
-    </div>
-  </div>
-  <div class="checklist-form-wrap" id="checklist-form-area">
-    <div id="checklist-form-inner">
-      <h3 class="checklist-form-title">Get the free guide</h3>
-      <p class="checklist-form-sub">Sent to your inbox instantly. No fluff — just the framework.</p>
-      <form id="checklist-form" onsubmit="handleChecklistSubmit(event)">
-        <!-- Mailchimp honeypot — do not remove -->
-        <input type="text" name="b_9bc30daf9c59f625e466a2c68_3268001efd" tabindex="-1" value="" style="position:absolute;left:-5000px;aria-hidden:true">
-        <div class="form-group">
-          <label>First Name</label>
-          <input type="text" name="FNAME" placeholder="Your first name" required>
-        </div>
-        <div class="form-group">
-          <label>Last Name</label>
-          <input type="text" name="LNAME" placeholder="Your last name" required>
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" name="EMAIL" placeholder="you@example.com" required>
-        </div>
-        <button type="submit" class="form-submit">Send Me the Guide →</button>
-      </form>
-      <p class="form-note">No spam, ever. Unsubscribe anytime. You'll also receive occasional tax tips from Mondragon Tax & Advisory.</p>
-    </div>
-    <div class="form-success" id="form-success">
-      <div class="form-success-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-          <polyline points="22,6 12,13 2,6"/>
-        </svg>
-      </div>
-      <h3>Check your inbox!</h3>
-      <p>The Tax Advisory Readiness Guide is on its way. While you're here — set up your free client portal in 60 seconds and reach me directly.</p>
-      <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-gold" style="display:inline-block;margin-top:20px;padding:14px 28px;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;" target="_blank">Set Up Free Portal →</a>
-    </div>
+<!-- FREE RESOURCES PROMO -->
+<section id="resources-promo">
+  <div style="max-width:640px;margin:0 auto;">
+    <div class="section-label" style="color:var(--gold);">Free Resources</div>
+    <h2 class="section-title" style="color:var(--cream);">Guides and tools,<br><em style="color:var(--gold-light);">free to download.</em></h2>
+    <p style="font-size:16px;font-weight:300;line-height:1.8;color:rgba(247,243,236,0.55);max-width:520px;margin:16px auto 36px;">From the Tax Advisory Readiness Guide to a café margin calculator, these are practical resources you can put to work today. Pick one and I'll send it straight to your inbox.</p>
+    <a href="resources.html" class="btn-primary">
+      Explore Free Resources
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 4l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
   </div>
 </section>
 
@@ -2156,7 +2211,7 @@
   <h2 class="cta-headline">Stop guessing.<br>Start <em>knowing</em>.</h2>
   <p class="cta-sub">Book a free, no-pressure consultation. We'll talk through your situation, identify exactly what you need, and determine whether this is the right fit — no sales pitch, no obligation.</p>
   <div class="cta-actions">
-    <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-primary" target="_blank">
+    <a href="https://calendly.com/mondragonbookkeeping/initial-consultation" class="btn-primary" target="_blank">
       Book a Free Consultation
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 4l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
@@ -2181,7 +2236,7 @@
           <small>Tax &amp; Advisory</small>
         </div>
       </a>
-      <p>Proactive accounting & tax services for small businesses and individuals — with a focus on construction & trades, cafés & restaurants, and solopreneurs. Based in San Diego, working with clients nationwide.</p>
+      <p>Proactive bookkeeping, tax & advisory for small businesses and individuals — with a focus on construction & trades, cafés & restaurants, and solopreneurs. Based in San Diego, working with clients nationwide.</p>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
@@ -2199,7 +2254,7 @@
         <li><a href="https://portal.mondragonbookkeeping.com/login?step=signIn" target="_blank">Client Portal</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="resources.html">Free Resources</a></li>
-        <li><a href="#guide">Free Guide</a></li>
+        <li><a href="readiness-guide.html">Free Guide</a></li>
         <li><a href="#about">About</a></li>
       </ul>
     </div>
@@ -2294,6 +2349,47 @@ window.addEventListener('scroll', () => {
     nav.style.borderBottomColor = 'rgba(23,117,253,0.15)';
   }
 });
+
+// ── MOBILE MENU ──
+(function () {
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  const nav = document.getElementById('main-nav');
+  if (!toggle || !menu) return;
+
+  function openMenu() {
+    menu.style.top = nav.offsetHeight + 'px';   // align under the current nav height
+    toggle.classList.add('open');
+    menu.classList.add('open');
+    document.body.classList.add('menu-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close menu');
+  }
+  function closeMenu() {
+    toggle.classList.remove('open');
+    menu.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+  }
+
+  toggle.addEventListener('click', () => {
+    menu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  // close after tapping any link in the menu
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // close on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
+  });
+
+  // reset when resizing back to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
+})();
 
 </script>
 </body>
