@@ -1526,7 +1526,22 @@
     .pricing-grid { grid-template-columns: 1fr; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr 1fr; }
+    .footer-col, .footer-brand { min-width: 0; }
+    .footer-brand p { max-width: none; }
+    .footer-contact-item, .footer-instagram { min-width: 0; overflow-wrap: anywhere; word-break: break-word; }
     .about-photo { width: 200px; height: 200px; }
+  }
+
+  /* ── PHONE (single-column, tighter padding) ── */
+  @media (max-width: 600px) {
+    nav { padding: 0 16px; }
+    #hero { padding: 92px 20px 52px; }
+    #pain, #process, #pricing, #testimonials, #cta, #resources-promo, #about { padding: 64px 20px; }
+    #values { padding: 64px 20px !important; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 16px; }
+    footer { padding: 48px 20px 24px; }
+    .hero-trust { gap: 16px 20px; }
   }
 
   /* ===================================================================
