@@ -3,397 +3,290 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Resources — Mondragon Tax &amp; Advisory</title>
-<meta name="description" content="Free tax guides and tools for business owners, investors, rental property owners, and café owners. From Mondragon Tax & Advisory — Brandon Mondragon, San Diego, CA.">
+<title>Free Resources | Mondragon Tax &amp; Advisory</title>
+<meta name="description" content="Free tax guides and tools for business owners, investors, rental property owners, and café owners. From Brandon Mondragon, Mondragon Tax &amp; Advisory, San Diego, CA.">
+<meta name="author" content="Brandon Mondragon">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://mondragontax.com/resources.html">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mondragontax.com/resources.html">
+<meta property="og:title" content="Free Resources | Mondragon Tax &amp; Advisory">
+<meta property="og:description" content="Practical tax and bookkeeping guides you can download and keep. From Brandon Mondragon, San Diego.">
+<meta property="og:site_name" content="Mondragon Tax &amp; Advisory">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --cream:         #F7F3EC;
-    --cream-dark:    #EDE8DF;
-    --charcoal:      #16181F;
-    --gold:          #1775FD;
-    --gold-light:    #4A93FD;
-    --sage:          #DFE7E0;
-    --text:          #1A1C24;
-    --text-mid:      #4A4D5A;
-    --text-light:    #7A7D8A;
-    --serif:         'Cormorant Garamond', Georgia, serif;
-    --sans:          'DM Sans', system-ui, sans-serif;
+  :root{
+    --ink:#16181F; --ink-mid:#252830; --ink-soft:#363A45;
+    --accent:#1775FD; --accent-light:#4A93FD;
+    --base:#F7F3EC; --base-deep:#EFEAE0; --panel:#DFE7E0; --muted:#6C7269;
+    --line:#D8D1C3;
+    --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  ::selection{background:var(--accent);color:#fff}
+  .grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--base);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0 0 .5em;letter-spacing:-.005em}
+  h1{font-size:clamp(40px,5.2vw,64px)}
+  h2{font-size:clamp(30px,3.4vw,42px)}
+  h3{font-size:26px;margin-bottom:.3em}
+  p{margin:0 0 1em}
+  a{color:var(--ink)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  section{padding:88px 0}
+  @media(max-width:820px){section{padding:64px 0}}
+  .rule{border:0;border-top:1px solid var(--line);margin:0}
+  .small{font-size:14.5px;color:var(--muted)}
+  .lead{font-size:18.5px;color:var(--ink-mid);max-width:58ch}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;background:var(--accent);color:#fff;text-decoration:none;padding:12px 24px;border-radius:4px;font-weight:500;font-size:16px;box-shadow:0 1px 2px rgba(22,24,31,.12),0 6px 18px -8px rgba(23,117,253,.55);transition:background .15s ease,transform .15s ease,box-shadow .15s ease}
+  .btn:hover{background:#0F5FD6;transform:translateY(-1px);box-shadow:0 2px 4px rgba(22,24,31,.14),0 10px 24px -8px rgba(23,117,253,.6)}
+  .btn .ar{display:inline-block;transition:transform .15s ease}
+  .btn:hover .ar{transform:translateX(4px)}
+  .btn.sm{min-height:42px;padding:9px 18px;font-size:15px}
+  .btn.light{background:var(--base);color:var(--ink)}
+  .btn.light:hover{background:#fff}
+
+  /* utility bar + nav */
+  .util{background:var(--base-deep);font-size:13.5px;color:var(--muted)}
+  .util .wrap{display:flex;justify-content:flex-end;gap:26px;padding-top:7px;padding-bottom:7px}
+  .util a{color:var(--muted);text-decoration:none}
+  .util a:hover{color:var(--ink)}
+  header.nav{position:sticky;top:0;background:rgba(247,243,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:20}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo .word{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1}
+  .logo .word small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.16em;color:var(--muted);margin-top:4px;font-weight:500}
+  .links{display:flex;gap:30px;align-items:center;font-size:15.5px}
+  .links a{text-decoration:none;font-weight:500}
+  .links a:not(.btn):hover{color:var(--accent)}
+  .links a[aria-current="page"]{border-bottom:2px solid var(--ink);padding-bottom:2px}
+  .menu-btn{display:none;background:none;border:1px solid var(--ink);border-radius:4px;padding:8px 12px;font:inherit;font-size:14px;cursor:pointer}
+  @media(max-width:820px){
+    .links{display:none}
+    .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:flex-start;gap:0;background:var(--base);border-bottom:1px solid var(--line);padding:8px 24px 20px}
+    .links.open a{padding:12px 0;width:100%}
+    .links.open .btn{margin-top:8px;justify-content:center}
+    .menu-btn{display:block}
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: var(--sans); background: var(--cream); color: var(--text); overflow-x: hidden; }
+  /* page intro */
+  .intro{padding:72px 0 56px}
+  .intro .note{font-size:17px;color:var(--ink-mid);max-width:64ch;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 48px; height: 72px;
-    background: rgba(22,24,31,0.97); backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(23,117,253,0.15);
+  /* resource blocks: one layout primitive, repeated */
+  .res{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center;padding:56px 0;border-top:1px solid var(--line)}
+  .res:first-of-type{border-top:0;padding-top:8px}
+  .res.flip .txt{order:2}
+  .res.flip .cover{order:1}
+  @media(max-width:820px){.res,.res.flip{grid-template-columns:1fr;gap:32px;padding:44px 0}.res.flip .txt{order:1}.res.flip .cover{order:2}}
+  .res .meta{font-size:14.5px;color:var(--muted);margin:0 0 10px}
+  .res h2{margin-bottom:.32em}
+  .res .desc{font-size:17px;color:var(--ink-mid);max-width:52ch;margin-bottom:18px}
+  .res ul{list-style:none;padding:0;margin:0 0 24px;font-size:15.5px;color:var(--ink-mid)}
+  .res ul li{position:relative;padding-left:26px;margin-bottom:9px;line-height:1.5}
+  .res ul li::before{content:"";position:absolute;left:0;top:.52em;width:12px;height:2px;background:var(--ink);opacity:.5}
+
+  /* the "cover" panel — a real object, not a decorative card */
+  .cover{position:relative;background:var(--panel);border-radius:6px;padding:38px 34px 32px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;box-shadow:0 1px 2px rgba(22,24,31,.06),0 14px 32px -20px rgba(22,24,31,.4)}
+  .cover .num{font-family:var(--serif);font-size:52px;line-height:1;color:var(--accent);margin-bottom:18px}
+  .cover .ct{font-family:var(--serif);font-size:34px;font-weight:600;line-height:1.1;margin:0}
+  .cover .cf{font-size:14px;color:var(--muted);margin:22px 0 0;padding-top:14px;border-top:1px solid rgba(22,24,31,.14)}
+
+  /* pull quote */
+  .pullq{border-top:1px solid var(--line);padding-top:46px;margin-top:16px;max-width:62ch}
+  .pullq p{font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);font-style:italic;line-height:1.24;margin:0}
+  .pullq p::before{content:"\201C";display:block;font-size:80px;line-height:.6;color:var(--accent);font-style:normal;margin-bottom:12px}
+  .pullq span{display:block;font-size:14.5px;color:var(--muted);margin-top:18px}
+
+  /* CTA band: the only dark section */
+  .band{background:var(--ink);color:var(--base);position:relative;overflow:hidden}
+  .band .wrap{position:relative;z-index:1}
+  .band .mark{position:absolute;right:-4%;bottom:-18%;width:min(46%,520px);opacity:.10;pointer-events:none}
+  .band h2{color:var(--base)}
+  .band a{color:var(--base)}
+  .band .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:10px}
+  .band .row .alt{display:inline-flex;align-items:center;min-height:48px;padding:12px 20px;border:1px solid rgba(247,243,236,.45);border-radius:4px;text-decoration:none;font-weight:500;font-size:16px}
+  .band .row .alt:hover{border-color:var(--base);background:rgba(247,243,236,.06)}
+  .band .off{font-size:15px;color:#B9B4A8;margin:26px 0 0;max-width:62ch}
+  .band .off a{color:var(--base)}
+
+  footer{font-size:14px;color:var(--muted);padding:44px 0 60px}
+  footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:28px}
+  @media(max-width:820px){footer .cols{grid-template-columns:1fr}}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--ink)}
+  footer ul{list-style:none;padding:0;margin:0}
+  footer li{margin-bottom:6px}
+  footer h4{font-family:var(--sans);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin:0 0 12px;font-weight:600}
+  footer .disc{max-width:82ch;font-size:13px;line-height:1.55}
+
+  /* mobile sticky CTA */
+  .sticky{display:none}
+  @media(max-width:820px){
+    .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--base);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:10px;transform:translateY(110%);transition:transform .25s ease}
+    .sticky.show{transform:none}
+    .sticky .btn{flex:1;justify-content:center}
+    .sticky .alt{display:inline-flex;align-items:center;justify-content:center;min-width:56px;min-height:48px;border:1px solid var(--ink);border-radius:4px;text-decoration:none;font-weight:500;font-size:15px;padding:0 14px}
   }
-  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .nav-logo .mark { height: 28px; width: auto; display: block; }
-  .footer-brand .mark { height: 34px; width: auto; display: block; }
-  .nav-logo-text { font-family: var(--serif); font-size: 18px; font-weight: 500; color: #F7F3EC; letter-spacing: 0.02em; line-height: 1.1; }
-  .nav-logo-text small { display: block; font-family: var(--sans); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,243,236,0.45); font-weight: 400; margin-top: 1px; }
-  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
-  .nav-links a { font-family: var(--sans); font-size: 13px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(247,243,236,0.6); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: #F7F3EC; }
-  .nav-ctas { display: flex; align-items: center; gap: 12px; }
-  .btn-ghost { font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,243,236,0.7); text-decoration: none; padding: 8px 16px; border: 1px solid rgba(247,243,236,0.2); border-radius: 3px; transition: all 0.2s; }
-  .btn-ghost:hover { color: #F7F3EC; border-color: rgba(247,243,236,0.5); }
-  .btn-gold { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #16181F; text-decoration: none; padding: 8px 20px; background: var(--gold); border-radius: 3px; transition: all 0.2s; }
-  .btn-gold:hover { background: var(--gold-light); color: #fff; }
-
-  /* ── PAGE HEADER ── */
-  #page-header { background: var(--charcoal); padding: 140px 48px 80px; position: relative; overflow: hidden; }
-  .header-grain { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); opacity: 0.4; pointer-events: none; }
-  .header-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
-  .header-label { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
-  .header-title { font-family: var(--serif); font-size: clamp(44px, 6vw, 72px); font-weight: 300; line-height: 1.05; color: var(--cream); margin-bottom: 20px; }
-  .header-title em { font-style: italic; color: var(--gold-light); }
-  .header-sub { font-family: var(--sans); font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(247,243,236,0.5); max-width: 560px; }
-  .header-divider { width: 48px; height: 1px; background: rgba(23,117,253,0.4); margin: 28px 0; }
-
-  /* ── CATALOG ── */
-  #resources { padding: 72px 48px 96px; max-width: 1000px; margin: 0 auto; }
-  .catalog { display: flex; flex-direction: column; gap: 26px; }
-  .catalog-intro { font-size: 16px; font-weight: 300; line-height: 1.85; color: var(--text-mid); max-width: 660px; margin: 0 0 44px; }
-  .catalog-intro strong { font-weight: 500; color: var(--text); }
-
-  .res-banner {
-    display: flex; border: 1px solid var(--cream-dark); border-radius: 4px;
-    overflow: hidden; text-decoration: none; color: inherit; background: var(--cream);
-    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
-  }
-  .res-banner:hover { box-shadow: 0 14px 34px rgba(22,24,31,0.10); transform: translateY(-2px); border-color: rgba(23,117,253,0.25); }
-
-  .rb-cover { flex: 0 0 40%; background: var(--charcoal); padding: 34px 34px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 210px; }
-  .rb-cover-grain { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); opacity: 0.5; pointer-events: none; }
-  .rb-badge { display: inline-flex; align-items: center; border-radius: 3px; padding: 6px 12px; width: fit-content; font-family: var(--sans); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; position: relative; z-index: 1; }
-  .rb-badge.blue { background: rgba(23,117,253,0.15); border: 1px solid rgba(23,117,253,0.3); color: var(--gold-light); }
-  .rb-badge.red { background: rgba(232,69,69,0.15); border: 1px solid rgba(232,69,69,0.3); color: #E84545; }
-  .rb-title { font-family: var(--serif); font-size: 30px; font-weight: 300; line-height: 1.1; color: var(--cream); position: relative; z-index: 1; }
-  .rb-title em { font-style: italic; color: var(--gold-light); }
-  .rb-title .red { font-style: italic; color: #E84545; }
-  .rb-format { font-family: var(--sans); font-size: 10px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(247,243,236,0.28); position: relative; z-index: 1; }
-
-  .rb-body { flex: 1; padding: 32px 36px; display: flex; flex-direction: column; }
-  .rb-desc { font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--text-mid); margin-bottom: 20px; }
-  .rb-teaser { list-style: none; margin-bottom: 26px; }
-  .rb-teaser li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; font-weight: 300; color: var(--text-mid); padding: 4px 0; line-height: 1.6; }
-  .rb-check { width: 15px; height: 15px; flex-shrink: 0; margin-top: 2px; border: 1.5px solid rgba(23,117,253,0.25); background: rgba(23,117,253,0.06); border-radius: 2px; display: flex; align-items: center; justify-content: center; }
-  .rb-check svg { width: 9px; height: 9px; }
-  .rb-cta { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
-  .res-banner:hover .rb-cta { gap: 12px; }
-  .rb-cta svg { transition: transform 0.2s; }
-
-  .catalog-note { margin-top: 44px; padding: 24px 28px; border-left: 2px solid var(--gold); background: rgba(23,117,253,0.04); }
-  .catalog-note p { font-family: var(--serif); font-size: 18px; font-style: italic; font-weight: 300; color: var(--text-mid); line-height: 1.75; }
-  .catalog-note span { display: block; margin-top: 12px; font-family: var(--sans); font-size: 12px; font-weight: 400; color: var(--text-light); font-style: normal; letter-spacing: 0.04em; }
-
-  /* ── CTA ── */
-  #cta { background: var(--charcoal); padding: 80px 48px; text-align: center; position: relative; overflow: hidden; }
-  .cta-inner { max-width: 600px; margin: 0 auto; position: relative; z-index: 1; }
-  .cta-eyebrow { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
-  .cta-headline { font-family: var(--serif); font-size: clamp(36px, 5vw, 56px); font-weight: 300; line-height: 1.1; color: var(--cream); margin-bottom: 16px; }
-  .cta-headline em { font-style: italic; color: var(--gold-light); }
-  .cta-sub { font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(247,243,236,0.45); margin-bottom: 36px; }
-  .cta-actions { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--charcoal); background: var(--cream); text-decoration: none; padding: 14px 28px; border-radius: 3px; transition: all 0.2s; }
-  .btn-primary:hover { background: #fff; }
-  .btn-outline { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,243,236,0.5); background: transparent; text-decoration: none; padding: 14px 28px; border-radius: 3px; border: 1px solid rgba(247,243,236,0.15); transition: all 0.2s; }
-  .btn-outline:hover { color: var(--cream); border-color: rgba(247,243,236,0.4); }
-
-  /* ── FOOTER ── */
-  footer { background: var(--charcoal); border-top: 1px solid rgba(247,243,236,0.05); padding: 56px 48px 28px; }
-  .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-  .footer-brand p { font-size: 13px; font-weight: 300; line-height: 1.8; color: rgba(247,243,236,0.3); margin-top: 16px; max-width: 240px; }
-  .footer-col h4 { font-family: var(--sans); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,243,236,0.25); margin-bottom: 16px; }
-  .footer-col ul { list-style: none; }
-  .footer-col ul li { margin-bottom: 8px; }
-  .footer-col a { font-family: var(--sans); font-size: 13px; font-weight: 300; color: rgba(247,243,236,0.4); text-decoration: none; transition: color 0.2s; }
-  .footer-col a:hover { color: var(--cream); }
-  .footer-contact-item { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 300; color: rgba(247,243,236,0.4); margin-bottom: 10px; }
-  .footer-instagram { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 300; color: rgba(247,243,236,0.4); text-decoration: none; transition: color 0.2s; }
-  .footer-instagram:hover { color: var(--gold-light); }
-  .footer-bottom { border-top: 1px solid rgba(247,243,236,0.06); padding-top: 24px; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
-  .footer-bottom p { font-size: 12px; font-weight: 300; color: rgba(247,243,236,0.2); line-height: 1.7; }
-  .footer-cred { font-size: 11px; font-weight: 300; color: rgba(247,243,236,0.28); margin-top: 10px; letter-spacing: 0.02em; }
-  .footer-legal { display: flex; gap: 20px; flex-shrink: 0; }
-  .footer-legal a { font-size: 11px; font-weight: 400; letter-spacing: 0.08em; color: rgba(247,243,236,0.2); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
-  .footer-legal a:hover { color: rgba(247,243,236,0.5); }
-
-  /* ── MOBILE NAV / HAMBURGER ── */
-  .nav-toggle { display:none; flex-direction:column; justify-content:center; gap:5px; width:44px; height:44px; padding:0; background:transparent; border:none; cursor:pointer; -webkit-tap-highlight-color:transparent; }
-  .nav-toggle span { display:block; width:24px; height:2px; margin:0 auto; background:#F7F3EC; border-radius:2px; transition:transform .28s ease, opacity .2s ease; }
-  .nav-toggle.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-  .nav-toggle.open span:nth-child(2) { opacity:0; }
-  .nav-toggle.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-  .mobile-menu { position:fixed; top:72px; left:0; right:0; z-index:99; background:rgba(22,24,31,0.98); backdrop-filter:blur(12px); border-bottom:1px solid rgba(23,117,253,0.15); display:flex; flex-direction:column; padding:8px 20px 24px; transform:translateY(-12px); opacity:0; visibility:hidden; pointer-events:none; transition:opacity .25s ease, transform .25s ease, visibility .25s; }
-  .mobile-menu.open { transform:translateY(0); opacity:1; visibility:visible; pointer-events:auto; }
-  .mobile-menu a { font-family:var(--sans); font-size:15px; font-weight:400; letter-spacing:0.06em; text-transform:uppercase; color:rgba(247,243,236,0.75); text-decoration:none; padding:16px 4px; border-bottom:1px solid rgba(247,243,236,0.08); transition:color .2s; }
-  .mobile-menu a:hover, .mobile-menu a:active { color:#F7F3EC; }
-  .mobile-menu-ctas { display:flex; flex-direction:column; gap:12px; margin-top:24px; }
-  .mobile-menu-ctas a { text-align:center; border-bottom:none; padding:14px 20px; }
-  .mobile-menu-ctas .btn-ghost { color:rgba(247,243,236,0.85); }
-  .mobile-menu-ctas .btn-gold { color:#16181F; }
-  body.menu-open { overflow:hidden; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 0 20px; }
-    nav .nav-links { display: none; }
-    .nav-ctas { display: none; }
-    .nav-toggle { display: flex; }
-    #page-header { padding: 120px 24px 60px; }
-    #resources { padding: 56px 24px 72px; }
-    .res-banner { flex-direction: column; }
-    .rb-cover { flex: none; min-height: 0; }
-    footer { padding: 48px 24px 24px; }
-    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
-    .footer-col, .footer-brand { min-width: 0; }
-    .footer-brand p { max-width: none; }
-    .footer-contact-item, .footer-instagram { min-width: 0; overflow-wrap: anywhere; word-break: break-word; }
-    #cta { padding: 60px 24px; }
-  }
-  @media (max-width: 600px) {
-    nav { padding: 0 16px; }
-    #page-header { padding: 112px 20px 56px; }
-    #resources { padding: 48px 20px 64px; }
-    #cta { padding: 56px 20px; }
-    footer { padding: 44px 20px 24px; }
-    .footer-top { grid-template-columns: 1fr; gap: 32px; }
-    .footer-bottom { flex-direction: column; gap: 16px; }
-  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">
-    <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134 72" aria-hidden="true"><rect x="14" y="33" width="24" height="24" rx="5" fill="#F7F3EC"/><rect x="54" y="22" width="24" height="24" rx="5" fill="#F7F3EC"/><rect x="94" y="11" width="24" height="24" rx="5" fill="#1775FD"/><rect x="2" y="62" width="130" height="6.5" rx="3.25" fill="#F7F3EC"/></svg>
-    <div class="nav-logo-text">Mondragon<small>Tax &amp; Advisory</small></div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html#how">How It Works</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#pricing">Pricing</a></li>
-    <li><a href="resources.html" style="color:#F7F3EC;">Resources</a></li>
-  </ul>
-  <div class="nav-ctas">
-    <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-ghost" target="_blank">Client Portal</a>
-    <a href="readiness-guide.html" class="btn-gold">Free Guide</a>
-  </div>
-  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<div class="util"><div class="wrap">
+  <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" rel="noopener">Client portal</a>
+  <a href="tel:+16193249128">(619) 324-9128</a>
+</div></div>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html#how">How It Works</a>
-  <a href="index.html#about">About</a>
-  <a href="index.html#pricing">Pricing</a>
-  <a href="resources.html">Resources</a>
-  <div class="mobile-menu-ctas">
-    <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-ghost" target="_blank">Client Portal</a>
-    <a href="readiness-guide.html" class="btn-gold">Free Guide</a>
+<header class="nav"><div class="wrap">
+  <a href="index.html" class="logo" aria-label="Mondragon Tax &amp; Advisory home">
+    <svg width="40" height="22" viewBox="0 0 134 72" aria-hidden="true"><rect x="14" y="33" width="24" height="24" rx="5" fill="#16181F"/><rect x="54" y="22" width="24" height="24" rx="5" fill="#16181F"/><rect x="94" y="11" width="24" height="24" rx="5" fill="#1775FD"/><rect x="2" y="62" width="130" height="6.5" rx="3.25" fill="#16181F"/></svg>
+    <span class="word">Mondragon<small>TAX &amp; ADVISORY</small></span>
+  </a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav class="links" id="menu">
+    <a href="index.html#who">Who I help</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#about">About</a>
+    <a href="resources.html" aria-current="page">Free resources</a>
+    <a class="btn sm" href="https://calendly.com/mondragontax/initial-consultation" rel="noopener">Book a free call</a>
+  </nav>
+</div></header>
+
+<main id="top">
+
+<section class="intro"><div class="wrap">
+  <h1>Guides and tools to help you understand your numbers.</h1>
+  <p class="lead">Practical guides and tools you can download and keep. Pick one below, and I'll send it straight to your inbox.</p>
+  <p class="note">Teaching people how their numbers actually work has always been my favorite part of this job, so building a place to share what I know felt natural. I'll keep adding new guides and tools here throughout the year. If you'd like a heads-up when the next one lands, grab any resource below. That puts you on the list.</p>
+</div></section>
+<hr class="rule">
+
+<section><div class="wrap">
+
+  <article class="res">
+    <div class="txt">
+      <p class="meta">8 pages · PDF by email · Advisory framework</p>
+      <h2>Tax Advisory Readiness Guide</h2>
+      <p class="desc">What to understand before you sit down with a tax advisor, and the questions worth bringing. Written for business owners, investors, and rental property owners who want to plan ahead.</p>
+      <ul>
+        <li>The real difference between a tax preparer and a tax advisor</li>
+        <li>A year-round planning calendar</li>
+        <li>Missed opportunities by situation: owner, rental, investor</li>
+      </ul>
+      <a class="btn" href="readiness-guide.html">Get the guide <span class="ar">→</span></a>
+    </div>
+    <div class="cover grain">
+      <div><div class="num">01</div><p class="ct">Tax Advisory Readiness Guide</p></div>
+      <p class="cf">8 pages · PDF by email</p>
+    </div>
+  </article>
+
+  <article class="res flip">
+    <div class="txt">
+      <p class="meta">6 pages · PDF by email · Post-tax season</p>
+      <h2>Missed the April 15th deadline?</h2>
+      <p class="desc">You missed the deadline. Here's what happens next, what the IRS can and can't do, and the steps to take now to limit the penalties and get back on track.</p>
+      <ul>
+        <li>Failure-to-file vs. failure-to-pay penalties, explained plainly</li>
+        <li>First-time penalty abatement, and how to request it</li>
+        <li>State-specific notes for California filers (FTB)</li>
+      </ul>
+      <a class="btn" href="missed-deadline.html">Get the guide <span class="ar">→</span></a>
+    </div>
+    <div class="cover grain">
+      <div><div class="num">02</div><p class="ct">Missed the April 15th Deadline?</p></div>
+      <p class="cf">6 pages · PDF by email</p>
+    </div>
+  </article>
+
+  <article class="res">
+    <div class="txt">
+      <p class="meta">Excel / Google Sheets · by email · Free tool for café owners</p>
+      <h2>Café Margin Mini-Calculator</h2>
+      <p class="desc">See what a single drink actually costs to make, and the margin you're really getting. Type in your ingredients and get the true cost, margin, and COGS of any drink in about five minutes.</p>
+      <ul>
+        <li>Cost any drink from its ingredients, instantly</li>
+        <li>Gross margin %, COGS %, and markup with a health check</li>
+        <li>A Menu Snapshot to see which drinks carry your menu</li>
+      </ul>
+      <a class="btn" href="cafe-calculator.html">Get the calculator <span class="ar">→</span></a>
+    </div>
+    <div class="cover grain">
+      <div><div class="num">03</div><p class="ct">Café Margin Mini-Calculator</p></div>
+      <p class="cf">Excel / Google Sheets · by email</p>
+    </div>
+  </article>
+
+  <div class="pullq">
+    <p>I'd rather put the framework in your hands early than have you piece it together after something goes wrong.</p>
+    <span>Brandon Mondragon · Founder, Mondragon Tax &amp; Advisory</span>
   </div>
+
+</div></section>
+
+<section class="band grain" id="contact"><svg class="mark" viewBox="0 0 134 72" aria-hidden="true"><rect x="14" y="33" width="24" height="24" rx="5" fill="#F7F3EC"/><rect x="54" y="22" width="24" height="24" rx="5" fill="#F7F3EC"/><rect x="94" y="11" width="24" height="24" rx="5" fill="#1775FD"/><rect x="2" y="62" width="130" height="6.5" rx="3.25" fill="#F7F3EC"/></svg><div class="wrap">
+  <h2>Have a specific situation?</h2>
+  <div class="row">
+    <a class="btn light" href="https://calendly.com/mondragontax/initial-consultation" rel="noopener">Book a free 30-minute call <span class="ar">→</span></a>
+    <a class="alt" href="sms:+16193249128?&body=Hi%20Brandon%2C%20I%27m%20interested%20in%20learning%20more%20about%20working%20together.">Text me</a>
+    <a class="alt" href="tel:+16193249128">Call (619) 324-9128</a>
+  </div>
+  <p class="off">We'll talk through where you're at, and I'll tell you what I'd do in your position. No pitch, no pressure. Anything sensitive goes through the <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" rel="noopener">secure portal</a> once we're set up.</p>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div>
+      <a href="index.html" class="logo" aria-label="Mondragon Tax &amp; Advisory">
+        <svg width="34" height="18" viewBox="0 0 134 72" aria-hidden="true"><rect x="14" y="33" width="24" height="24" rx="5" fill="#16181F"/><rect x="54" y="22" width="24" height="24" rx="5" fill="#16181F"/><rect x="94" y="11" width="24" height="24" rx="5" fill="#1775FD"/><rect x="2" y="62" width="130" height="6.5" rx="3.25" fill="#16181F"/></svg>
+        <span class="word" style="font-size:20px">Mondragon<small>TAX &amp; ADVISORY</small></span>
+      </a>
+      <p style="margin-top:14px;max-width:44ch">Bookkeeping, payroll, tax preparation, and tax planning for contractors, cafés and restaurants, self-employed owners, rental owners, and individuals. Based in San Diego, working with clients across California remotely.</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul><li><a href="index.html#who">Who I help</a></li><li><a href="index.html#bookkeeping">Monthly bookkeeping</a></li><li><a href="index.html#tax">Tax preparation</a></li><li><a href="index.html#about">About</a></li><li><a href="resources.html">Free resources</a></li><li><a href="https://portal.mondragonbookkeeping.com/login?step=signIn" rel="noopener">Client portal</a></li></ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul><li><a href="mailto:brandon@mondragontax.com">brandon@mondragontax.com</a></li><li><a href="tel:+16193249128">(619) 324-9128</a></li><li>San Diego, CA · remote-friendly</li><li><a href="https://www.instagram.com/mondragon.taxadvisory/" rel="noopener">Instagram @mondragon.taxadvisory</a></li></ul>
+    </div>
+  </div>
+  <p class="disc">© 2026 Mondragon Tax &amp; Advisory. All rights reserved. This website is for marketing and informational purposes only. It does not establish a professional relationship or constitute specific legal, tax, or financial advice for your individual situation. An engagement letter is required to establish a client relationship. Mondragon Tax &amp; Advisory is not a CPA firm and does not provide attest services or legal advice. Brandon Mondragon is a California Tax Education Council (CTEC) Registered Tax Preparer, #A360990.</p>
+  <p class="small"><a href="privacy-policy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
+</div></footer>
+
+<div class="sticky" id="sticky" aria-hidden="true">
+  <a class="btn" href="https://calendly.com/mondragontax/initial-consultation" rel="noopener">Book a free call</a>
+  <a class="alt" href="sms:+16193249128?&body=Hi%20Brandon%2C%20I%27m%20interested%20in%20learning%20more%20about%20working%20together.">Text</a>
 </div>
 
-<!-- PAGE HEADER -->
-<section id="page-header">
-  <div class="header-grain"></div>
-  <div class="header-inner">
-    <div class="header-label">Free Resources</div>
-    <h1 class="header-title">Guides and tools to help you<br><em>understand your numbers</em></h1>
-    <div class="header-divider"></div>
-    <p class="header-sub">Practical guides and tools you can download and keep. Pick one below, and I'll send it straight to your inbox.</p>
-  </div>
-</section>
-
-<!-- CATALOG -->
-<section id="resources">
-  <p class="catalog-intro">Teaching people how their numbers actually work has always been my favorite part of this job, so building a place to share what I know felt natural. I'll keep adding new guides and tools here throughout the year. <strong>If you'd like a heads-up when the next one lands, grab any resource below — that puts you on the list.</strong></p>
-  <div class="catalog">
-
-    <!-- READINESS GUIDE -->
-    <a class="res-banner" href="readiness-guide.html">
-      <div class="rb-cover">
-        <div class="rb-cover-grain"></div>
-        <div class="rb-badge blue">Advisory Framework</div>
-        <h2 class="rb-title">Tax Advisory<br><em>Readiness Guide</em></h2>
-        <div class="rb-format">8 pages &nbsp;·&nbsp; PDF by email</div>
-      </div>
-      <div class="rb-body">
-        <p class="rb-desc">What to understand before you sit down with a tax advisor, and the questions worth bringing. Written for business owners, investors, and rental property owners who want to plan ahead.</p>
-        <ul class="rb-teaser">
-          <li><span class="rb-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>The real difference between a tax preparer and a tax advisor</li>
-          <li><span class="rb-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A year-round planning calendar</li>
-          <li><span class="rb-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Missed opportunities by situation: owner, rental, investor</li>
-        </ul>
-        <span class="rb-cta">Get the guide <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 4l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
-
-    <!-- MISSED DEADLINE -->
-    <a class="res-banner" href="missed-deadline.html">
-      <div class="rb-cover" style="background:#1A0A0A;">
-        <div class="rb-cover-grain"></div>
-        <div class="rb-badge red">Post-Tax Season</div>
-        <h2 class="rb-title">Missed the<br><span class="red">April 15th</span> Deadline?</h2>
-        <div class="rb-format">6 pages &nbsp;·&nbsp; PDF by email</div>
-      </div>
-      <div class="rb-body">
-        <p class="rb-desc">You missed the deadline. Here's what happens next, what the IRS can and can't do, and the steps to take now to limit the penalties and get back on track.</p>
-        <ul class="rb-teaser">
-          <li><span class="rb-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Failure-to-file vs. failure-to-pay penalties, explained plainly</li>
-          <li><span class="rb-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>First-time penalty abatement, and how to request it</li>
-          <li><span class="rb-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>State-specific notes for California filers (FTB)</li>
-        </ul>
-        <span class="rb-cta">Get the guide <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 4l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
-
-    <!-- CAFÉ CALCULATOR -->
-    <a class="res-banner" href="cafe-calculator.html">
-      <div class="rb-cover">
-        <div class="rb-cover-grain"></div>
-        <div class="rb-badge blue">Free Tool · Café Owners</div>
-        <h2 class="rb-title">Café Margin<br><em>Mini-Calculator</em></h2>
-        <div class="rb-format">Excel / Google Sheets &nbsp;·&nbsp; by email</div>
-      </div>
-      <div class="rb-body">
-        <p class="rb-desc">See what a single drink actually costs to make, and the margin you're really getting. Type in your ingredients and get the true cost, margin, and COGS of any drink in about five minutes.</p>
-        <ul class="rb-teaser">
-          <li><span class="rb-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Cost any drink from its ingredients, instantly</li>
-          <li><span class="rb-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Gross margin %, COGS %, and markup with a health check</li>
-          <li><span class="rb-check"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 5.5l2 2 4-4" stroke="#1775FD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A Menu Snapshot to see which drinks carry your menu</li>
-        </ul>
-        <span class="rb-cta">Get the calculator <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 4l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a>
-
-  </div><!-- /catalog -->
-
-  <div class="catalog-note">
-    <p>"I'd rather put the framework in your hands early than have you piece it together after something goes wrong."</p>
-    <span>— Brandon Mondragon, Founder &amp; Principal · Mondragon Tax &amp; Advisory</span>
-  </div>
-
-</section>
-
-<!-- CTA SECTION -->
-<section id="cta">
-  <div class="cta-inner">
-    <div class="cta-eyebrow">Have a specific situation?</div>
-    <h2 class="cta-headline">Let's look at<br><em>your numbers.</em></h2>
-    <p class="cta-sub">Book a free consultation. We'll talk through where you're at, and I'll tell you what I'd do in your position.</p>
-    <div class="cta-actions">
-      <a href="https://calendly.com/mondragontax/initial-consultation" class="btn-primary" target="_blank">
-        Book a Free Consultation
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 4l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" class="btn-outline" target="_blank">Access Client Portal</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <a href="index.html" class="nav-logo" style="text-decoration:none">
-        <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134 72" aria-hidden="true"><rect x="14" y="33" width="24" height="24" rx="5" fill="#F7F3EC"/><rect x="54" y="22" width="24" height="24" rx="5" fill="#F7F3EC"/><rect x="94" y="11" width="24" height="24" rx="5" fill="#1775FD"/><rect x="2" y="62" width="130" height="6.5" rx="3.25" fill="#F7F3EC"/></svg>
-        <div class="nav-logo-text">Mondragon<small>Tax &amp; Advisory</small></div>
-      </a>
-      <p>Proactive bookkeeping, tax, and advisory for small businesses and individuals — with a focus on construction &amp; trades, cafés &amp; restaurants, and solopreneurs. Based in San Diego, working with clients nationwide.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="index.html#pricing">Monthly Bookkeeping</a></li>
-        <li><a href="index.html#pricing">Payroll Management</a></li>
-        <li><a href="index.html#pricing">Tax Preparation</a></li>
-        <li><a href="index.html#pricing">Tax Planning</a></li>
-        <li><a href="index.html#pricing">Entity Setup</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="https://portal.mondragonbookkeeping.com/login?step=signIn" target="_blank">Client Portal</a></li>
-        <li><a href="index.html#pricing">Pricing</a></li>
-        <li><a href="resources.html">Free Resources</a></li>
-        <li><a href="index.html#about">About Brandon</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <div class="footer-contact-item">✉ brandon@mondragontax.com</div>
-      <div class="footer-contact-item">⊙ San Diego, CA (remote-friendly)</div>
-      <div class="footer-contact-item">
-        <a href="https://www.instagram.com/mondragon.taxadvisory/" target="_blank" class="footer-instagram">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
-          @mondragon.taxadvisory
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Mondragon Tax &amp; Advisory. All rights reserved.<br>
-    <span style="color:rgba(247,243,236,0.15)">This website is for marketing and informational purposes only. It does not establish a professional relationship or constitute specific legal, tax, or financial advice for your individual situation. An engagement letter is required to establish a client relationship.</span>
-    <span class="footer-cred">Brandon Mondragon · CTEC-Registered Tax Preparer #A360990 · Bonded · PTIN on file.</span></p>
-    <div class="footer-legal">
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-    </div>
-  </div>
-</footer>
-
 <script>
-// ── MOBILE MENU ──
-(function () {
-  const toggle = document.getElementById('navToggle');
-  const menu = document.getElementById('mobileMenu');
-  const nav = document.querySelector('nav');
-  if (!toggle || !menu) return;
-
-  function openMenu() {
-    menu.style.top = nav.offsetHeight + 'px';
-    toggle.classList.add('open');
-    menu.classList.add('open');
-    document.body.classList.add('menu-open');
-    toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Close menu');
+  const mb=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
+  mb.addEventListener('click',()=>{const o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.textContent=o?'Close':'Menu'});
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');mb.setAttribute('aria-expanded','false');mb.textContent='Menu'}));
+  const st=document.getElementById('sticky'),band=document.getElementById('contact');
+  function onScroll(){
+    const y=window.scrollY,h=window.innerHeight;
+    const overBand=band.getBoundingClientRect().top<h;
+    const show=y>h*.6&&!overBand;
+    st.classList.toggle('show',show);st.setAttribute('aria-hidden',!show);
   }
-  function closeMenu() {
-    toggle.classList.remove('open');
-    menu.classList.remove('open');
-    document.body.classList.remove('menu-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open menu');
-  }
-
-  toggle.addEventListener('click', () => {
-    menu.classList.contains('open') ? closeMenu() : openMenu();
-  });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
-  });
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) closeMenu();
-  });
-})();
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
 </script>
-
 </body>
 </html>
