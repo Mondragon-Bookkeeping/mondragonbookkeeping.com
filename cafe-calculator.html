@@ -3,251 +3,333 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Café Margin Calculator — Mondragon Tax &amp; Advisory</title>
-<meta name="description" content="A free calculator that shows a café drink's true cost and margin in about five minutes. Built by a San Diego CTEC-registered tax preparer who works with cafés.">
+<title>Free Café Margin Calculator | Mondragon Tax &amp; Advisory</title>
+<meta name="description" content="Free café margin calculator: cost any drink from its ingredients and see the real margin, COGS %, and markup in about five minutes. From Brandon Mondragon, San Diego.">
+<meta name="author" content="Brandon Mondragon">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://mondragontax.com/cafe-calculator.html">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mondragontax.com/cafe-calculator.html">
+<meta property="og:title" content="Free Café Margin Calculator | Mondragon Tax &amp; Advisory">
+<meta property="og:description" content="Cost any drink from its ingredients and see the real margin in about five minutes.">
+<meta property="og:site_name" content="Mondragon Tax &amp; Advisory">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   :root{
-    --ink:#16181F; --accent:#1775FD; --accent-light:#4A93FD;
-    --base:#F7F3EC; --panel:#DFE7E0; --muted:#6C7269;
-    --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+    --ink:#16181F; --ink-mid:#252830; --ink-soft:#363A45;
+    --accent:#1775FD; --accent-light:#4A93FD;
+    --base:#F7F3EC; --base-deep:#EFEAE0; --panel:#DFE7E0; --muted:#6C7269;
+    --line:#D8D1C3;
+    --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   }
-  body{background:var(--base);font-family:var(--sans);color:var(--ink);line-height:1.6;}
-  .wrap{max-width:960px;margin:0 auto;padding:0 20px;}
+  *,*::before,*::after{box-sizing:border-box}
+  ::selection{background:var(--accent);color:#fff}
+  .grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--base);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0 0 .5em;letter-spacing:-.005em}
+  h1{font-size:clamp(38px,4.6vw,56px)}
+  h2{font-size:clamp(28px,3vw,36px)}
+  p{margin:0 0 1em}
+  a{color:var(--ink)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  section{padding:64px 0}
+  @media(max-width:820px){section{padding:48px 0}}
+  .rule{border:0;border-top:1px solid var(--line);margin:0}
+  .small{font-size:14.5px;color:var(--muted)}
 
-  /* Header */
-  header{background:var(--ink);}
-  .hd{max-width:960px;margin:0 auto;padding:20px;display:flex;align-items:center;justify-content:space-between;}
-  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .logo .mark{display:block;height:26px;width:auto;}
-  .logo .wm{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--base);line-height:1;}
-  .logo .wm small{display:block;font-family:var(--sans);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,243,236,.4);margin-top:2px;}
-  .hd .loc{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(247,243,236,.35);}
+  .btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;background:var(--accent);color:#fff;text-decoration:none;padding:12px 24px;border-radius:4px;font-weight:500;font-size:16px;box-shadow:0 1px 2px rgba(22,24,31,.12),0 6px 18px -8px rgba(23,117,253,.55);transition:background .15s ease,transform .15s ease,box-shadow .15s ease}
+  .btn:hover{background:#0F5FD6;transform:translateY(-1px);box-shadow:0 2px 4px rgba(22,24,31,.14),0 10px 24px -8px rgba(23,117,253,.6)}
+  .btn .ar{display:inline-block;transition:transform .15s ease}
+  .btn:hover .ar{transform:translateX(4px)}
+  .btn.sm{min-height:42px;padding:9px 18px;font-size:15px}
+  .btn.light{background:var(--base);color:var(--ink)}
+  .btn.light:hover{background:#fff}
 
-  /* Hero — two columns on desktop */
-  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:56px 0 20px;}
-  .eyebrow{font-size:12px;font-weight:500;letter-spacing:.20em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;}
-  h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,50px);line-height:1.04;margin-bottom:20px;}
-  h1 em{font-style:italic;color:var(--accent);}
-  .sub{font-size:17px;font-weight:300;color:#3a3d47;max-width:560px;margin-bottom:22px;}
-
-  /* Preview mockup */
-  .preview{background:#fff;border:1px solid #e7e1d6;border-radius:16px;box-shadow:0 14px 40px rgba(22,24,31,.10);overflow:hidden;}
-  .preview .pv-head{background:var(--ink);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
-  .preview .pv-head b{font-family:var(--serif);font-weight:500;font-size:16px;color:var(--base);}
-  .preview .pv-head span{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,236,.45);}
-  .pv-row{display:grid;grid-template-columns:1.4fr .7fr .7fr auto;gap:10px;align-items:center;padding:13px 20px;border-bottom:1px solid #f0ece2;font-size:13px;}
-  .pv-row.h{background:#faf8f3;font-size:10px;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);font-weight:600;}
-  .pv-row .drink{font-weight:500;color:var(--ink);}
-  .pv-row .num{color:#3a3d47;font-variant-numeric:tabular-nums;}
-  .pill{justify-self:end;font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;font-variant-numeric:tabular-nums;}
-  .pill.good{background:rgba(23,117,253,.10);color:var(--accent);}
-  .pill.warn{background:rgba(232,145,23,.12);color:#B4700E;}
-  .pv-foot{padding:12px 20px 14px;font-size:11px;color:var(--muted);background:#faf8f3;}
-  .pv-foot em{font-style:normal;color:var(--accent);font-weight:600;}
-
-  /* Stat strip */
-  .stat{display:flex;gap:18px;flex-wrap:wrap;margin:14px 0 6px;}
-  .stat .s{background:var(--panel);border-radius:12px;padding:16px 20px;flex:1;min-width:150px;}
-  .stat .s b{font-family:var(--serif);font-size:28px;font-weight:600;color:var(--ink);display:block;line-height:1;}
-  .stat .s b em{font-style:italic;color:var(--accent);}
-  .stat .s span{font-size:12.5px;color:var(--muted);display:block;margin-top:6px;}
-
-  /* Value list */
-  .value{padding:30px 0 6px;}
-  .value h2{font-family:var(--serif);font-weight:500;font-size:26px;margin-bottom:16px;}
-  .value ul{list-style:none;}
-  .value li{font-size:15.5px;font-weight:300;color:#3a3d47;padding:9px 0 9px 26px;position:relative;}
-  .value li::before{content:"";position:absolute;left:0;top:16px;width:7px;height:7px;border-radius:50%;background:var(--accent);}
-
-  /* Honest-limits note */
-  .honest{background:rgba(23,117,253,.04);border-left:2px solid var(--accent);border-radius:3px;padding:18px 22px;margin:24px 0 4px;}
-  .honest p{font-size:14px;font-weight:300;color:#3a3d47;line-height:1.7;}
-  .honest p b{font-weight:600;color:var(--ink);}
-
-  /* Form card */
-  .card{background:#fff;border:1px solid #e7e1d6;border-radius:16px;padding:30px 28px;margin:26px auto 10px;max-width:560px;box-shadow:0 8px 30px rgba(22,24,31,.06);}
-  .card h3{font-family:var(--serif);font-weight:600;font-size:26px;margin-bottom:6px;}
-  .card .cap{font-size:13.5px;color:var(--muted);margin-bottom:20px;}
-  .field{margin-bottom:14px;}
-  .field label{display:block;font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--ink);margin-bottom:6px;}
-  .field input[type=text],.field input[type=email]{width:100%;font-family:var(--sans);font-size:15px;padding:13px 14px;border:1px solid #d8d2c6;border-radius:9px;background:#fcfbf8;color:var(--ink);}
-  .field input:focus{outline:none;border-color:var(--accent);background:#fff;}
-  .btn{display:block;width:100%;background:var(--accent);color:#fff;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;border-radius:9px;padding:16px;cursor:pointer;margin-top:6px;}
-  .btn:hover{background:#1366e0;}
-  .btn:disabled{opacity:.7;cursor:default;}
-  .fine{font-size:11.5px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.6;}
-
-  /* Success state */
-  .success-card{text-align:center;}
-  .success-card .success-ic{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
-  .success-card h3{font-family:var(--serif);font-weight:600;font-size:26px;margin-bottom:10px;}
-  .success-card h3 em{font-style:italic;color:var(--accent);}
-  .success-card p{font-size:14px;font-weight:300;color:#3a3d47;max-width:440px;margin:0 auto;line-height:1.7;}
-
-  /* Credibility strip */
-  .cred{max-width:560px;margin:16px auto 0;display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;text-align:center;}
-  .cred .dot{width:4px;height:4px;border-radius:50%;background:var(--muted);opacity:.5;}
-  .cred span{font-size:11.5px;letter-spacing:.04em;color:var(--muted);}
-  .cred b{color:var(--ink);font-weight:600;}
-
-  /* Footer */
-  footer{margin-top:44px;border-top:1px solid #e7e1d6;}
-  .ft{padding:26px 20px 50px;text-align:center;font-size:11.5px;font-weight:300;color:var(--muted);line-height:1.8;}
-  .ft a{color:var(--accent);text-decoration:none;}
-  .disc{font-size:10.5px;color:#a8a89f;margin-top:10px;}
-
-  @media (max-width:820px){
-    .hero{grid-template-columns:1fr;gap:30px;padding:40px 0 12px;}
-    .preview{order:2;}
+  .util{background:var(--base-deep);font-size:13.5px;color:var(--muted)}
+  .util .wrap{display:flex;justify-content:flex-end;gap:26px;padding-top:7px;padding-bottom:7px}
+  .util a{color:var(--muted);text-decoration:none}
+  .util a:hover{color:var(--ink)}
+  header.nav{position:sticky;top:0;background:rgba(247,243,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:20}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo .word{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1}
+  .logo .word small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.16em;color:var(--muted);margin-top:4px;font-weight:500}
+  .links{display:flex;gap:30px;align-items:center;font-size:15.5px}
+  .links a{text-decoration:none;font-weight:500}
+  .links a:not(.btn):hover{color:var(--accent)}
+  .menu-btn{display:none;background:none;border:1px solid var(--ink);border-radius:4px;padding:8px 12px;font:inherit;font-size:14px;cursor:pointer}
+  @media(max-width:820px){
+    .links{display:none}
+    .links.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:flex-start;gap:0;background:var(--base);border-bottom:1px solid var(--line);padding:8px 24px 20px}
+    .links.open a{padding:12px 0;width:100%}
+    .links.open .btn{margin-top:8px;justify-content:center}
+    .menu-btn{display:block}
   }
+
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  @media(max-width:900px){.split{grid-template-columns:1fr;gap:36px}}
+  .meta{font-size:14.5px;color:var(--muted);margin:0 0 14px}
+  .subhead{font-size:18.5px;color:var(--ink-mid);max-width:52ch}
+
+  /* numbers are heroes */
+  .figs{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+  @media(max-width:560px){.figs{grid-template-columns:1fr;gap:22px}}
+  .figs b{display:block;font-family:var(--serif);font-weight:600;font-size:42px;line-height:1;margin-bottom:9px}
+  .figs span{display:block;font-size:14.5px;color:var(--muted);line-height:1.5}
+
+  /* Menu Snapshot: a real object from the tool, not a decorative card */
+  .preview{position:relative;background:var(--panel);border-radius:6px;padding:22px 22px 18px;box-shadow:0 1px 2px rgba(22,24,31,.06),0 14px 32px -20px rgba(22,24,31,.4)}
+  .pv-head{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;margin-bottom:6px;border-bottom:1px solid rgba(22,24,31,.14)}
+  .pv-head b{font-family:var(--serif);font-size:23px;font-weight:600}
+  .pv-head span{font-size:13px;color:var(--muted)}
+  .pv-row{display:grid;grid-template-columns:1.5fr .7fr .7fr .8fr;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid rgba(22,24,31,.08);font-size:15px}
+  .pv-row.h{font-size:13px;color:var(--muted);padding:9px 0}
+  .pv-row .num,.pv-row .pill{font-variant-numeric:tabular-nums}
+  .pv-row .num{text-align:right}
+  .pill{justify-self:end;font-size:12.5px;font-weight:600;padding:4px 11px;border-radius:20px}
+  .pill.good{background:rgba(23,117,253,.12);color:var(--accent)}
+  .pill.watch{background:rgba(22,24,31,.07);color:var(--ink-mid)}
+  .pv-foot{font-size:13.5px;color:var(--muted);padding-top:13px;line-height:1.5}
+
+  .value ul{list-style:none;padding:0;margin:0;font-size:16.5px;color:var(--ink-mid);max-width:62ch}
+  .value ul li{position:relative;padding-left:26px;margin-bottom:11px;line-height:1.5}
+  .value ul li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:2px;background:var(--ink);opacity:.5}
+
+  .callout{background:var(--panel);border-radius:6px;padding:24px 26px;max-width:66ch}
+  .callout strong{display:block;font-family:var(--serif);font-size:23px;font-weight:600;margin-bottom:8px}
+  .callout p{font-size:16px;color:var(--ink-mid);margin:0;line-height:1.55}
+
+  .signup{position:relative;background:var(--panel);border-radius:6px;padding:34px 32px;box-shadow:0 1px 2px rgba(22,24,31,.06),0 14px 32px -20px rgba(22,24,31,.4)}
+  .signup h2{font-size:30px;margin:0 0 8px}
+  .signup .sub{font-size:15.5px;color:var(--ink-mid);margin:0 0 22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
+  .field label i{font-style:normal;color:var(--muted);font-weight:400}
+  .field input{width:100%;background:var(--base);border:1px solid var(--line);border-radius:4px;padding:12px 14px;font-family:var(--sans);font-size:16px;color:var(--ink);outline:none;transition:border-color .15s}
+  .field input::placeholder{color:var(--muted);opacity:.7}
+  .field input:focus{border-color:var(--accent)}
+  .signup button.btn{width:100%;justify-content:center;border:0;cursor:pointer;font-family:var(--sans);margin-top:6px}
+  .signup button.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+  .note{font-size:13.5px;color:var(--muted);line-height:1.55;margin:14px 0 0}
+  .err{display:none;font-size:13px;color:#A32D2D;margin:6px 0 0}
+  .field.bad input{border-color:#A32D2D}
+  .field.bad .err{display:block}
+  #success-state .btn{width:100%;justify-content:center;margin-top:4px}
+  #success-state .note{padding-top:14px;border-top:1px solid rgba(22,24,31,.14);margin-top:18px}
+  .done{display:none}
+  .done.visible{display:block}
+  .done h2{margin-bottom:10px}
+  .done p{font-size:15.5px;color:var(--ink-mid);margin:0}
+
+  .band{background:var(--ink);color:var(--base);position:relative;overflow:hidden}
+  .band .wrap{position:relative;z-index:1}
+  .band .mark{position:absolute;right:-4%;bottom:-18%;width:min(46%,520px);opacity:.10;pointer-events:none}
+  .band h2{color:var(--base)}
+  .band a{color:var(--base)}
+  .band .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:10px}
+  .band .row .alt{display:inline-flex;align-items:center;min-height:48px;padding:12px 20px;border:1px solid rgba(247,243,236,.45);border-radius:4px;text-decoration:none;font-weight:500;font-size:16px}
+  .band .row .alt:hover{border-color:var(--base);background:rgba(247,243,236,.06)}
+  .band .off{font-size:15px;color:#B9B4A8;margin:26px 0 0;max-width:62ch}
+  .band .off a{color:var(--base)}
+
+  footer{font-size:14px;color:var(--muted);padding:40px 0 56px}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--ink)}
+  footer .disc{max-width:82ch;font-size:13px;line-height:1.55}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-  <header>
-    <div class="hd">
-      <a class="logo" href="https://mondragontax.com">
-        <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134 72" aria-hidden="true"><rect x="14" y="33" width="24" height="24" rx="5" fill="#F7F3EC"/><rect x="54" y="22" width="24" height="24" rx="5" fill="#F7F3EC"/><rect x="94" y="11" width="24" height="24" rx="5" fill="#1775FD"/><rect x="2" y="62" width="130" height="6.5" rx="3.25" fill="#F7F3EC"/></svg>
-        <span class="wm">Mondragon<small>Tax &amp; Advisory</small></span>
-      </a>
-      <span class="loc">San Diego, CA</span>
+<div class="util"><div class="wrap">
+  <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" rel="noopener">Client portal</a>
+  <a href="tel:+16193249128">(619) 324-9128</a>
+</div></div>
+
+<header class="nav"><div class="wrap">
+  <a href="index.html" class="logo" aria-label="Mondragon Tax &amp; Advisory home">
+    <svg width="40" height="22" viewBox="0 0 134 72" aria-hidden="true"><rect x="14" y="33" width="24" height="24" rx="5" fill="#16181F"/><rect x="54" y="22" width="24" height="24" rx="5" fill="#16181F"/><rect x="94" y="11" width="24" height="24" rx="5" fill="#1775FD"/><rect x="2" y="62" width="130" height="6.5" rx="3.25" fill="#16181F"/></svg>
+    <span class="word">Mondragon<small>TAX &amp; ADVISORY</small></span>
+  </a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+  <nav class="links" id="menu">
+    <a href="index.html#who">Who I help</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#about">About</a>
+    <a href="resources.html">Free resources</a>
+    <a class="btn sm" href="https://calendly.com/mondragontax/initial-consultation" rel="noopener">Book a free call</a>
+  </nav>
+</div></header>
+
+<main id="top">
+
+<section><div class="wrap split">
+  <div>
+    <p class="meta">Free tool &middot; Excel / Google Sheets &middot; for café owners</p>
+    <h1>What does your best latte really cost?</h1>
+    <p class="subhead">A drink's true cost is spread across a dozen invoices, which makes it hard to see. This free calculator pulls it together in about five minutes: the real cost and margin of any drink. No finance background needed.</p>
+    <div class="figs">
+      <div><b>$1.88</b><span>What a $6 oat latte costs in materials. A number that's easy to lose track of.</span></div>
+      <div><b>5 min</b><span>To cost a drink and see its real margin, COGS %, and markup.</span></div>
     </div>
-  </header>
+  </div>
+  <div class="preview grain" aria-hidden="true">
+    <div class="pv-head"><b>Menu Snapshot</b><span>Sample</span></div>
+    <div class="pv-row h"><span>Drink</span><span class="num">Price</span><span class="num">Cost</span><span style="text-align:right">Margin</span></div>
+    <div class="pv-row"><span>Oat Milk Latte</span><span class="num">$6.00</span><span class="num">$1.88</span><span class="pill good">69%</span></div>
+    <div class="pv-row"><span>Drip Coffee</span><span class="num">$3.25</span><span class="num">$0.41</span><span class="pill good">87%</span></div>
+    <div class="pv-row"><span>Mocha</span><span class="num">$6.50</span><span class="num">$2.55</span><span class="pill watch">61%</span></div>
+    <div class="pv-foot">See at a glance which drinks carry your menu, and which to revisit.</div>
+  </div>
+</div></section>
+<hr class="rule">
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow">Free tool for café owners</div>
-        <h1>What does your best latte <em>really</em> cost?</h1>
-        <p class="sub">A drink's true cost is spread across a dozen invoices, which makes it hard to see. This free calculator pulls it together in about five minutes — the real cost and margin of any drink. No finance background needed.</p>
+<section><div class="wrap split">
+  <div class="value">
+    <h2>What you get</h2>
+    <ul>
+      <li>A drink-cost calculator. Type in your ingredients, get cost per drink instantly</li>
+      <li>Your gross margin %, COGS %, and markup, with a color-coded health check</li>
+      <li>A Menu Snapshot to see which drinks carry your menu, and which to revisit</li>
+    </ul>
+    <div class="callout" style="margin-top:30px">
+      <strong>What it doesn't cover</strong>
+      <p>This measures gross margin: ingredients only. It doesn't include labor, rent, or waste. Those are where most of the real money hides, and they're what a free 15-minute Café Numbers Check-up walks through.</p>
+    </div>
+  </div>
 
-        <div class="stat">
-          <div class="s"><b>$1.88</b><span>What a $6 oat latte costs in materials — a number that's easy to lose track of.</span></div>
-          <div class="s"><b><em>~5 min</em></b><span>To cost a drink and see its real margin, COGS %, and markup.</span></div>
+  <aside class="signup grain">
+    <div id="form-wrap">
+      <h2>Send me the calculator</h2>
+      <p class="sub">Enter your details and I'll email you the download link.</p>
+      <form id="mc-form" onsubmit="handleSubmit(event)">
+        <!-- Mailchimp honeypot — do not remove -->
+        <input type="text" name="b_9bc30daf9c59f625e466a2c68_3268001efd" tabindex="-1" value="" style="position:absolute;left:-5000px;" aria-hidden="true">
+        <!-- Lead source (matches the guide pages' Mailchimp setup) -->
+        <input type="hidden" name="LEADSOURCE" value="cafe-calculator">
+        <div class="field">
+          <label for="FNAME">First name</label>
+          <input type="text" id="FNAME" name="FNAME" placeholder="Jordan" autocomplete="given-name" required>
+          <p class="err" id="FNAME-err"></p>
         </div>
-      </div>
-
-      <!-- Preview mockup (illustrative sample numbers) -->
-      <div class="preview" aria-hidden="true">
-        <div class="pv-head"><b>Menu Snapshot</b><span>Sample</span></div>
-        <div class="pv-row h"><span>Drink</span><span>Price</span><span>Cost</span><span>Margin</span></div>
-        <div class="pv-row"><span class="drink">Oat Milk Latte</span><span class="num">$6.00</span><span class="num">$1.88</span><span class="pill good">69%</span></div>
-        <div class="pv-row"><span class="drink">Drip Coffee</span><span class="num">$3.25</span><span class="num">$0.41</span><span class="pill good">87%</span></div>
-        <div class="pv-row"><span class="drink">Mocha</span><span class="num">$6.50</span><span class="num">$2.55</span><span class="pill warn">61%</span></div>
-        <div class="pv-foot">Color-coded at a glance — <em>which drinks carry your menu</em>, and which to revisit.</div>
-      </div>
-    </section>
-
-    <section class="value">
-      <h2>What you get</h2>
-      <ul>
-        <li>A drink-cost calculator — type in your ingredients, get cost per drink instantly</li>
-        <li>Your gross margin %, COGS %, and markup, with a color-coded health check</li>
-        <li>A Menu Snapshot to see which drinks carry your menu, and which to revisit</li>
-      </ul>
-    </section>
-
-    <section>
-      <div class="honest">
-        <p><b>What it doesn't cover.</b> This measures gross margin: ingredients only. It doesn't include labor, rent, or waste. Those are where most of the real money hides, and they're what a free 15-minute Café Numbers Check-up walks through.</p>
-      </div>
-    </section>
-
-    <section>
-      <div id="form-wrap">
-        <form class="card" id="mc-form" onsubmit="handleSubmit(event)">
-          <h3>Send me the calculator</h3>
-          <div class="cap">Enter your details and I'll email you the download link.</div>
-
-          <!-- Mailchimp honeypot — do not remove -->
-          <input type="text" name="b_9bc30daf9c59f625e466a2c68_3268001efd" tabindex="-1" value="" style="position:absolute;left:-5000px;" aria-hidden="true">
-          <!-- Lead source (matches the guide pages' Mailchimp setup) -->
-          <input type="hidden" name="LEADSOURCE" value="cafe-calculator">
-
-          <div class="field">
-            <label for="FNAME">First name</label>
-            <input type="text" id="FNAME" name="FNAME" placeholder="Jordan" required>
-          </div>
-          <div class="field">
-            <label for="CAFE">Café name <span style="opacity:.55;font-weight:400;">(optional)</span></label>
-            <input type="text" id="CAFE" name="CAFE" placeholder="Your café or shop">
-          </div>
-          <div class="field">
-            <label for="EMAIL">Email</label>
-            <input type="email" id="EMAIL" name="EMAIL" placeholder="you@yourcafe.com" required>
-          </div>
-
-          <button class="btn" type="submit" id="submit-btn">Send me the calculator →</button>
-          <div class="fine">Free. No spam. Unsubscribe anytime. You'll get the occasional café tip from Mondragon Tax &amp; Advisory.<br>A simplified estimator for educational use — not tax or financial advice.</div>
-        </form>
-      </div>
-
-      <!-- Success state -->
-      <div class="card success-card" id="success-state" style="display:none;">
-        <div class="success-ic">✓</div>
-        <h3>Calculator is <em>on its way.</em></h3>
-        <p>Check your inbox — it should arrive within a couple of minutes. If you don't see it, check your spam folder and add brandon@mondragontax.com to your contacts.</p>
-      </div>
-
-      <!-- Credibility strip -->
-      <div class="cred">
-        <span><b>Brandon Mondragon</b></span>
-        <span class="dot"></span>
-        <span>CTEC-Registered Tax Preparer <b>#A360990</b></span>
-        <span class="dot"></span>
-        <span>San Diego, CA</span>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="ft">
-      © 2026 Mondragon Tax &amp; Advisory · <a href="https://mondragontax.com">mondragontax.com</a> · San Diego, CA<br>
-      <a href="https://www.instagram.com/mondragon.taxadvisory/">@mondragon.taxadvisory</a>
-      <div class="disc">Mondragon Tax &amp; Advisory · San Diego, CA · You're seeing this because you clicked through to grab the free café calculator. This tool is for educational use only and does not constitute tax or financial advice.</div>
+        <div class="field">
+          <label for="CAFE">Café name <i>(optional)</i></label>
+          <input type="text" id="CAFE" name="CAFE" placeholder="Your café or shop" autocomplete="organization">
+          <p class="err" id="CAFE-err"></p>
+        </div>
+        <div class="field">
+          <label for="EMAIL">Email</label>
+          <input type="email" id="EMAIL" name="EMAIL" placeholder="you@yourcafe.com" autocomplete="email" required>
+          <p class="err" id="EMAIL-err"></p>
+        </div>
+        <button class="btn" type="submit" id="submit-btn">Send me the calculator <span class="ar">&rarr;</span></button>
+        <p class="note">Your download appears right here as soon as you submit. No spam, unsubscribe anytime. Your details go to my mailing list (Mailchimp) and nowhere else &mdash; see the <a href="privacy-policy.html">privacy policy</a>. The calculator is a simplified estimator for educational use, not tax or financial advice.</p>
+      </form>
     </div>
-  </footer>
+    <div class="done" id="success-state">
+      <h2>Thanks. Here's your calculator.</h2>
+      <p>Grab it below. It opens in Excel or Google Sheets, and it's yours to keep.</p>
+      <a class="btn" id="dl" href="cafe-margin-calculator.xlsx" download>Download the calculator &rarr;</a>
+      <p class="note">Questions about your real food and labor cost? Email me at
+        <a href="mailto:brandon@mondragontax.com">brandon@mondragontax.com</a>.</p>
+    </div>
+  </aside>
+</div></section>
+
+<section class="band grain" id="contact"><svg class="mark" viewBox="0 0 134 72" aria-hidden="true"><rect x="14" y="33" width="24" height="24" rx="5" fill="#F7F3EC"/><rect x="54" y="22" width="24" height="24" rx="5" fill="#F7F3EC"/><rect x="94" y="11" width="24" height="24" rx="5" fill="#1775FD"/><rect x="2" y="62" width="130" height="6.5" rx="3.25" fill="#F7F3EC"/></svg><div class="wrap">
+  <h2>Want the labor and rent side too?</h2>
+  <div class="row">
+    <a class="btn light" href="https://calendly.com/mondragontax/initial-consultation" rel="noopener">Book a free 30-minute call <span class="ar">&rarr;</span></a>
+    <a class="alt" href="sms:+16193249128?&body=Hi%20Brandon%2C%20I%27d%20like%20to%20talk%20about%20my%20caf%C3%A9%20numbers.">Text me</a>
+    <a class="alt" href="tel:+16193249128">Call (619) 324-9128</a>
+  </div>
+  <p class="off">We'll walk through your real food and labor cost and where the profit is leaking. No pitch, no pressure. Anything sensitive goes through the <a href="https://portal.mondragonbookkeeping.com/login?step=signIn" rel="noopener">secure portal</a> once we're set up.</p>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <p class="disc">&copy; 2026 Mondragon Tax &amp; Advisory. All rights reserved. This page is for marketing and informational purposes only. The calculator is a simplified estimator for educational use and does not constitute specific legal, tax, or financial advice for your individual situation. An engagement letter is required to establish a client relationship. Mondragon Tax &amp; Advisory is not a CPA firm and does not provide attest services or legal advice. Brandon Mondragon is a California Tax Education Council (CTEC) Registered Tax Preparer, #A360990.</p>
+  <p class="small">San Diego, CA &middot; remote-friendly &middot; <a href="index.html">mondragontax.com</a> &middot; <a href="https://www.instagram.com/mondragon.taxadvisory/" rel="noopener">@mondragon.taxadvisory</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a></p>
+</div></footer>
 
 <script>
+  const mb=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
+  mb.addEventListener('click',()=>{const o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.textContent=o?'Close':'Menu'});
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');mb.setAttribute('aria-expanded','false');mb.textContent='Menu'}));
+
+/* Courtesy validation, not a security control: catches typos and lazy junk
+   before they reach the mailing list. The file is public either way. */
+var DISPOSABLE=['mailinator.com','guerrillamail.com','10minutemail.com','tempmail.com','temp-mail.org',
+ 'throwaway.email','yopmail.com','trashmail.com','sharklasers.com','getnada.com','maildrop.cc',
+ 'fakeinbox.com','dispostable.com','mailnesia.com','spam4.me','grr.la','mohmal.com','emailondeck.com'];
+var TYPOS={'gmial.com':'gmail.com','gmai.com':'gmail.com','gmail.co':'gmail.com','gnail.com':'gmail.com',
+ 'gmaill.com':'gmail.com','hotmial.com':'hotmail.com','hotmai.com':'hotmail.com','yahooo.com':'yahoo.com',
+ 'yaho.com':'yahoo.com','outlok.com':'outlook.com','icloud.co':'icloud.com'};
+
+function setErr(id,msg){
+  var f=document.getElementById(id).closest('.field');
+  var e=document.getElementById(id+'-err');
+  if(msg){e.textContent=msg;f.classList.add('bad');}else{e.textContent='';f.classList.remove('bad');}
+  return !msg;
+}
+function validate(){
+  var fn=document.getElementById('FNAME').value.trim();
+  var em=document.getElementById('EMAIL').value.trim().toLowerCase();
+  var ok=true, junk=/(https?:|www\.|<|>|\{|\})/i;
+  if(fn.length<2) ok=setErr('FNAME','Please enter your first name.')&&ok;
+  else if(junk.test(fn)) ok=setErr('FNAME','That doesn\'t look like a name.')&&ok;
+  else setErr('FNAME','');
+  var shape=/^[^\s@,;:"'()\[\]\\]+@[^\s@.,;:"'()\[\]\\]+(\.[^\s@.,;:"'()\[\]\\]+)+$/;
+  var d=em.split('@')[1]||'';
+  if(!shape.test(em)) ok=setErr('EMAIL','Please enter a valid email address.')&&ok;
+  else if(DISPOSABLE.indexOf(d)>-1) ok=setErr('EMAIL','Please use an address you actually check, so I can reach you.')&&ok;
+  else if(TYPOS[d]) ok=setErr('EMAIL','Did you mean '+em.split('@')[0]+'@'+TYPOS[d]+'?')&&ok;
+  else setErr('EMAIL','');
+  return ok;
+}
+['FNAME','CAFE','EMAIL'].forEach(function(id){
+  document.getElementById(id).addEventListener('input',function(){setErr(id,'');});
+});
+function reveal(){
+  document.getElementById('form-wrap').style.display='none';
+  var s=document.getElementById('success-state');
+  s.classList.add('visible'); s.setAttribute('tabindex','-1'); s.focus();
+}
 function handleSubmit(event){
   event.preventDefault();
-  var form=event.target;
-  var btn=document.getElementById('submit-btn');
+  if(!validate()) return;
+  var form=event.target, btn=document.getElementById('submit-btn');
   btn.textContent='Sending…'; btn.disabled=true;
-  var email=form.querySelector('[name="EMAIL"]').value;
-  var fname=form.querySelector('[name="FNAME"]').value;
-  var cafe=form.querySelector('[name="CAFE"]').value;
+  var email=form.querySelector('[name="EMAIL"]').value.trim();
+  var fname=form.querySelector('[name="FNAME"]').value.trim();
+  var cafe=form.querySelector('[name="CAFE"]').value.trim();
   var honeypot=form.querySelector('[name="b_9bc30daf9c59f625e466a2c68_3268001efd"]').value;
+  if(honeypot){reveal();return;}
+  var done=false; function finish(){if(!done){done=true;reveal();}}
   var cb='mc_cb_'+Date.now();
   var params=new URLSearchParams({
-    u:'9bc30daf9c59f625e466a2c68',
-    id:'3268001efd',
-    EMAIL:email,
-    FNAME:fname,
-    CAFE:cafe,
-    LEADSOURCE:'cafe-calculator',
-    ['b_9bc30daf9c59f625e466a2c68_3268001efd']:honeypot,
-    c:cb
+    u:'9bc30daf9c59f625e466a2c68', id:'3268001efd',
+    EMAIL:email, FNAME:fname, CAFE:cafe, LEADSOURCE:'cafe-calculator',
+    ['b_9bc30daf9c59f625e466a2c68_3268001efd']:honeypot, c:cb
   });
-  window[cb]=function(data){
-    delete window[cb];
-    if(data.result==='success' || (data.msg && data.msg.toLowerCase().indexOf('already subscribed')>-1)){
-      document.getElementById('form-wrap').style.display='none';
-      document.getElementById('success-state').style.display='block';
-    } else {
-      btn.textContent='Something went wrong — try again'; btn.disabled=false;
-    }
-  };
+  /* The download is never withheld because of a mailing-list hiccup. */
+  window[cb]=function(){delete window[cb];finish();};
   var s=document.createElement('script');
   s.src='https://mondragonbookkeeping.us14.list-manage.com/subscribe/post-json?'+params.toString();
-  s.onerror=function(){ btn.textContent='Something went wrong — try again'; btn.disabled=false; };
+  s.onerror=finish;
   document.body.appendChild(s);
+  setTimeout(finish,4000);
 }
 </script>
-
 </body>
 </html>

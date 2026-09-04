@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tax Advisory Readiness Guide, Free Download | Mondragon Tax &amp; Advisory</title>
+<title>Tax Advisory Readiness Guide — Free Download | Mondragon Tax &amp; Advisory</title>
 <meta name="description" content="Free 8-page guide: what every business owner, investor, and rental property owner should understand before sitting down with a tax advisor.">
 <meta name="author" content="Brandon Mondragon">
 <meta name="robots" content="index, follow">
@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mondragontax.com/readiness-guide.html">
-<meta property="og:title" content="Tax Advisory Readiness Guide, Free Download | Mondragon Tax &amp; Advisory">
+<meta property="og:title" content="Tax Advisory Readiness Guide — Free Download | Mondragon Tax &amp; Advisory">
 <meta property="og:description" content="Free 8-page guide: what every business owner, investor, and rental property owner should understand before sitting down with a tax advisor.">
 <meta property="og:site_name" content="Mondragon Tax &amp; Advisory">
 <meta name="twitter:card" content="summary">
@@ -106,6 +106,11 @@
   .signup button.btn{width:100%;justify-content:center;border:0;cursor:pointer;font-family:var(--sans);margin-top:6px}
   .signup button.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
   .note{font-size:13.5px;color:var(--muted);line-height:1.55;margin:14px 0 0}
+  .err{display:none;font-size:13px;color:#A32D2D;margin:6px 0 0}
+  .field.bad input{border-color:#A32D2D}
+  .field.bad .err{display:block}
+  #success-state .btn{width:100%;justify-content:center;margin-top:4px}
+  #success-state .note{padding-top:14px;border-top:1px solid rgba(22,24,31,.14);margin-top:18px}
   .done{display:none}
   .done.visible{display:block}
   .done h2{margin-bottom:10px}
@@ -192,24 +197,29 @@
         <div class="field">
           <label for="fname">First name</label>
           <input type="text" id="fname" name="FNAME" placeholder="Your first name" autocomplete="given-name" required>
+          <p class="err" id="fname-err"></p>
         </div>
         <div class="field">
           <label for="lname">Last name</label>
           <input type="text" id="lname" name="LNAME" placeholder="Your last name" autocomplete="family-name" required>
+          <p class="err" id="lname-err"></p>
         </div>
         <div class="field">
           <label for="email">Email address</label>
           <input type="email" id="email" name="EMAIL" placeholder="you@example.com" autocomplete="email" required>
+          <p class="err" id="email-err"></p>
         </div>
         <button type="submit" class="btn" id="submit-btn">Send me the guide <span class="ar">&rarr;</span></button>
       </form>
-      <p class="note">No spam, ever. Unsubscribe anytime. You'll receive occasional tax notes from Mondragon Tax &amp; Advisory.</p>
+      <p class="note">Your download appears right here as soon as you submit. No spam, unsubscribe anytime. Your details go to my mailing list (Mailchimp) and nowhere else &mdash; see the <a href="privacy-policy.html">privacy policy</a>.</p>
     </div>
 
     <div class="done" id="success-state">
-      <h2>The guide is on its way.</h2>
-      <p>Check your inbox. It should arrive within a couple of minutes. If you don't see it, check your spam folder and add brandon@mondragontax.com to your contacts.</p>
-      <a class="arrow" href="https://portal.mondragonbookkeeping.com/login?step=signIn" rel="noopener">Set up your free client portal &rarr;</a>
+      <h2>Thanks. Here's your guide.</h2>
+      <p>Grab it below. It's yours to keep, and this page will stay put if you want to come back to it.</p>
+      <a class="btn" id="dl" href="readiness-guide.pdf" download>Download the guide (PDF) &rarr;</a>
+      <p class="note">Got a question about your own numbers? Email me at
+        <a href="mailto:brandon@mondragontax.com">brandon@mondragontax.com</a> and I'll give you a straight answer.</p>
     </div>
   </aside>
 
@@ -236,21 +246,82 @@
   mb.addEventListener('click',()=>{const o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.textContent=o?'Close':'Menu'});
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');mb.setAttribute('aria-expanded','false');mb.textContent='Menu'}));
 
+/* ---- validation ----------------------------------------------------------
+   This is a courtesy check, not a security control: it catches typos and lazy
+   junk before they reach the mailing list. Anyone can bypass it with devtools,
+   which is fine, because the PDF is a public file either way.            */
+var DISPOSABLE = ['mailinator.com','guerrillamail.com','10minutemail.com','tempmail.com','temp-mail.org',
+  'throwaway.email','yopmail.com','trashmail.com','sharklasers.com','getnada.com','maildrop.cc',
+  'fakeinbox.com','dispostable.com','mailnesia.com','spam4.me','grr.la','mohmal.com','emailondeck.com'];
+var TYPOS = {'gmial.com':'gmail.com','gmai.com':'gmail.com','gmail.co':'gmail.com','gnail.com':'gmail.com',
+  'gmaill.com':'gmail.com','hotmial.com':'hotmail.com','hotmai.com':'hotmail.com','yahooo.com':'yahoo.com',
+  'yaho.com':'yahoo.com','outlok.com':'outlook.com','icloud.co':'icloud.com'};
+
+function setErr(id, msg) {
+  var f = document.getElementById(id).closest('.field');
+  var e = document.getElementById(id + '-err');
+  if (msg) { e.textContent = msg; f.classList.add('bad'); }
+  else { e.textContent = ''; f.classList.remove('bad'); }
+  return !msg;
+}
+
+function validate() {
+  var fn = document.getElementById('fname').value.trim();
+  var ln = document.getElementById('lname').value.trim();
+  var em = document.getElementById('email').value.trim().toLowerCase();
+  var ok = true;
+
+  var junk = /(https?:|www\.|<|>|\{|\})/i;
+  if (fn.length < 2) ok = setErr('fname', 'Please enter your first name.') && ok;
+  else if (junk.test(fn)) ok = setErr('fname', 'That doesn't look like a name.') && ok;
+  else setErr('fname', '');
+
+  if (ln.length < 2) ok = setErr('lname', 'Please enter your last name.') && ok;
+  else if (junk.test(ln)) ok = setErr('lname', 'That doesn't look like a name.') && ok;
+  else setErr('lname', '');
+
+  var shape = /^[^\s@,;:"'()\[\]\]+@[^\s@.,;:"'()\[\]\]+(\.[^\s@.,;:"'()\[\]\]+)+$/;
+  var domain = em.split('@')[1] || '';
+  if (!shape.test(em)) ok = setErr('email', 'Please enter a valid email address.') && ok;
+  else if (DISPOSABLE.indexOf(domain) > -1) ok = setErr('email', 'Please use an address you actually check, so I can reach you.') && ok;
+  else if (TYPOS[domain]) ok = setErr('email', 'Did you mean ' + em.split('@')[0] + '@' + TYPOS[domain] + '?') && ok;
+  else setErr('email', '');
+
+  return ok;
+}
+
+['fname','lname','email'].forEach(function (id) {
+  document.getElementById(id).addEventListener('input', function () { setErr(id, ''); });
+});
+
+function reveal() {
+  document.getElementById('form-wrap').style.display = 'none';
+  var s = document.getElementById('success-state');
+  s.classList.add('visible');
+  s.setAttribute('tabindex', '-1');
+  s.focus();
+}
+
 function handleSubmit(event) {
   event.preventDefault();
-  const form = event.target;
-  const btn = document.getElementById('submit-btn');
-  const original = btn.innerHTML;
-  btn.textContent = 'Sending\u2026';
+  if (!validate()) return;
+
+  var form = event.target;
+  var btn = document.getElementById('submit-btn');
+  btn.textContent = 'Sending…';
   btn.disabled = true;
 
-  const email = form.querySelector('[name="EMAIL"]').value;
-  const fname = form.querySelector('[name="FNAME"]').value;
-  const lname = form.querySelector('[name="LNAME"]').value;
-  const honeypot = form.querySelector('[name="b_9bc30daf9c59f625e466a2c68_3268001efd"]').value;
+  var email = form.querySelector('[name="EMAIL"]').value.trim();
+  var fname = form.querySelector('[name="FNAME"]').value.trim();
+  var lname = form.querySelector('[name="LNAME"]').value.trim();
+  var honeypot = form.querySelector('[name="b_9bc30daf9c59f625e466a2c68_3268001efd"]').value;
+  if (honeypot) { reveal(); return; }
 
-  const callbackName = 'mc_cb_' + Date.now();
-  const params = new URLSearchParams({
+  var done = false;
+  function finish() { if (!done) { done = true; reveal(); } }
+
+  var callbackName = 'mc_cb_' + Date.now();
+  var params = new URLSearchParams({
     u: '9bc30daf9c59f625e466a2c68',
     id: '3268001efd',
     EMAIL: email,
@@ -261,27 +332,13 @@ function handleSubmit(event) {
     c: callbackName
   });
 
-  function succeed() {
-    document.getElementById('form-wrap').style.display = 'none';
-    document.getElementById('success-state').classList.add('visible');
-  }
-  function fail() {
-    btn.innerHTML = 'Something went wrong \u2014 try again';
-    btn.disabled = false;
-    setTimeout(function(){ btn.innerHTML = original; }, 4000);
-  }
-
-  window[callbackName] = function(data) {
-    delete window[callbackName];
-    if (data.result === 'success') { succeed(); }
-    else if (data.msg && data.msg.toLowerCase().includes('already subscribed')) { succeed(); }
-    else { fail(); }
-  };
-
-  const script = document.createElement('script');
+  /* The download is never withheld because of a mailing-list hiccup. */
+  window[callbackName] = function () { delete window[callbackName]; finish(); };
+  var script = document.createElement('script');
   script.src = 'https://mondragonbookkeeping.us14.list-manage.com/subscribe/post-json?' + params.toString();
-  script.onerror = fail;
+  script.onerror = finish;
   document.body.appendChild(script);
+  setTimeout(finish, 4000);
 }
 </script>
 </body>
