@@ -209,8 +209,8 @@
 
   <aside class="signup grain">
     <div id="form-wrap">
-      <h2>Send me the calculator</h2>
-      <p class="sub">Enter your details and I'll email you the download link.</p>
+      <h2>Get the free calculator</h2>
+      <p class="sub">Enter your details. Your download link will appear right here.</p>
       <form id="mc-form" onsubmit="handleSubmit(event)">
         <!-- Mailchimp honeypot — do not remove -->
         <input type="text" name="b_9bc30daf9c59f625e466a2c68_3268001efd" tabindex="-1" value="" style="position:absolute;left:-5000px;" aria-hidden="true">
@@ -231,8 +231,8 @@
           <input type="email" id="EMAIL" name="EMAIL" placeholder="you@yourcafe.com" autocomplete="email" required>
           <p class="err" id="EMAIL-err"></p>
         </div>
-        <button class="btn" type="submit" id="submit-btn">Send me the calculator <span class="ar">&rarr;</span></button>
-        <p class="note">Your download appears right here as soon as you submit. No spam, unsubscribe anytime. Your details go to my mailing list (Mailchimp) and nowhere else &mdash; see the <a href="privacy-policy.html">privacy policy</a>. The calculator is a simplified estimator for educational use, not tax or financial advice.</p>
+        <button class="btn" type="submit" id="submit-btn">Get instant access <span class="ar">&rarr;</span></button>
+        <p class="note">Your download appears right here as soon as you submit. No spam, unsubscribe anytime. Submitting sends your details to my mailing list (Mailchimp) &mdash; see the <a href="privacy-policy.html">privacy policy</a>. The calculator is a simplified estimator for educational use, not tax or financial advice.</p>
       </form>
     </div>
     <div class="done" id="success-state">
@@ -309,7 +309,7 @@ function handleSubmit(event){
   event.preventDefault();
   if(!validate()) return;
   var form=event.target, btn=document.getElementById('submit-btn');
-  btn.textContent='Sending…'; btn.disabled=true;
+  btn.textContent='Getting it ready…'; btn.disabled=true;
   var email=form.querySelector('[name="EMAIL"]').value.trim();
   var fname=form.querySelector('[name="FNAME"]').value.trim();
   var cafe=form.querySelector('[name="CAFE"]').value.trim();

@@ -165,7 +165,7 @@
 <section><div class="wrap split">
 
   <div>
-    <p class="meta">Free guide &middot; 6 pages &middot; PDF by email</p>
+    <p class="meta">Free guide &middot; 6 pages &middot; Instant PDF download</p>
     <h1>Missed your tax deadline. Now what?</h1>
     <p class="subhead">Missing a deadline doesn't have to spiral, but the next few moves matter. This guide breaks down what's happening with your account and what to do about it.</p>
     <div class="callout">
@@ -187,8 +187,8 @@
 
   <aside class="signup grain">
     <div id="form-wrap">
-      <h2>Send me the guide</h2>
-      <p class="sub">Enter your name and email and I'll send it straight to your inbox.</p>
+      <h2>Get the free guide</h2>
+      <p class="sub">Enter your name and email. Your download link will appear right here.</p>
       <form id="mc-form" onsubmit="handleSubmit(event)">
         <!-- Mailchimp honeypot — do not remove -->
         <input type="text" name="b_9bc30daf9c59f625e466a2c68_3268001efd" tabindex="-1" value="" style="position:absolute;left:-5000px;" aria-hidden="true">
@@ -209,14 +209,14 @@
           <input type="email" id="email" name="EMAIL" placeholder="you@example.com" autocomplete="email" required>
           <p class="err" id="email-err"></p>
         </div>
-        <button type="submit" class="btn" id="submit-btn">Send me the guide <span class="ar">&rarr;</span></button>
+        <button type="submit" class="btn" id="submit-btn">Get instant access <span class="ar">&rarr;</span></button>
       </form>
-      <p class="note">Your download appears right here as soon as you submit. No spam, unsubscribe anytime. Your details go to my mailing list (Mailchimp) and nowhere else &mdash; see the <a href="privacy-policy.html">privacy policy</a>.</p>
+      <p class="note">Your download appears right here as soon as you submit. No spam, unsubscribe anytime. Submitting sends your details to my mailing list (Mailchimp) &mdash; see the <a href="privacy-policy.html">privacy policy</a>.</p>
     </div>
 
     <div class="done" id="success-state">
       <h2>Thanks. Here's your guide.</h2>
-      <p>Grab it below. It's yours to keep, and this page will stay put if you want to come back to it.</p>
+      <p>Grab it below. It's yours to download and keep.</p>
       <a class="btn" id="dl" href="missed-deadline-guide.pdf" download>Download the guide (PDF) &rarr;</a>
       <p class="note">Got a question about your own numbers? Email me at
         <a href="mailto:brandon@mondragontax.com">brandon@mondragontax.com</a> and I'll give you a straight answer.</p>
@@ -273,14 +273,14 @@ function validate() {
 
   var junk = /(https?:|www\.|<|>|\{|\})/i;
   if (fn.length < 2) ok = setErr('fname', 'Please enter your first name.') && ok;
-  else if (junk.test(fn)) ok = setErr('fname', 'That doesn't look like a name.') && ok;
+  else if (junk.test(fn)) ok = setErr('fname', 'That doesn\'t look like a name.') && ok;
   else setErr('fname', '');
 
   if (ln.length < 2) ok = setErr('lname', 'Please enter your last name.') && ok;
-  else if (junk.test(ln)) ok = setErr('lname', 'That doesn't look like a name.') && ok;
+  else if (junk.test(ln)) ok = setErr('lname', 'That doesn\'t look like a name.') && ok;
   else setErr('lname', '');
 
-  var shape = /^[^\s@,;:"'()\[\]\]+@[^\s@.,;:"'()\[\]\]+(\.[^\s@.,;:"'()\[\]\]+)+$/;
+  var shape = /^[^\s@,;:"'()\[\]\\]+@[^\s@.,;:"'()\[\]\\]+(\.[^\s@.,;:"'()\[\]\\]+)+$/;
   var domain = em.split('@')[1] || '';
   if (!shape.test(em)) ok = setErr('email', 'Please enter a valid email address.') && ok;
   else if (DISPOSABLE.indexOf(domain) > -1) ok = setErr('email', 'Please use an address you actually check, so I can reach you.') && ok;
@@ -308,7 +308,7 @@ function handleSubmit(event) {
 
   var form = event.target;
   var btn = document.getElementById('submit-btn');
-  btn.textContent = 'Sending…';
+  btn.textContent = 'Getting it ready…';
   btn.disabled = true;
 
   var email = form.querySelector('[name="EMAIL"]').value.trim();
